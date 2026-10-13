@@ -407,7 +407,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="reveal-up relative overflow-hidden rounded-3xl bg-ink p-8 text-white sm:p-10 lg:sticky lg:top-28">
             <div aria-hidden className="absolute -top-24 -right-24 size-72 rounded-full bg-brand/30 blur-3xl" />
             <p className="relative text-[12px] font-bold tracking-[0.16em] text-brand-light uppercase">Pricing</p>
-            <h2 className="relative mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">A fixed price, agreed before we start</h2>
+            <p className="relative mt-3 flex items-baseline gap-2">
+              <span className="text-[15px] text-zinc-400">From</span>
+              <span className="text-6xl font-extrabold tracking-tight text-brand-light">{s.price.from}</span>
+              <span className="text-[15px] text-zinc-400">{s.price.unit}</span>
+            </p>
+            <h2 className="relative mt-4 text-2xl font-extrabold tracking-tight sm:text-3xl">A custom offer, fixed before we start</h2>
             <p className="relative mt-4 text-[16px] leading-relaxed text-zinc-300">
               Every project gets a written quote after a free call, so you know the cost up front. {s.price.note}
             </p>
@@ -415,7 +420,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               href="/free-growth-plan/"
               className="btn-shine group relative mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
             >
-              Get an exact quote
+              Get a custom offer
               <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>

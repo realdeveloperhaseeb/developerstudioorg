@@ -350,9 +350,17 @@ html { scroll-behavior: smooth; }
 @keyframes lightbox-in { from { opacity: 0; transform: scale(0.94); } }
 @keyframes lightbox-fade { from { opacity: 0; } }
 
+/* ---------- Pricing: total pops when it changes ---------- */
+@keyframes price-pop {
+  0% { transform: scale(0.9); opacity: 0.4; }
+  60% { transform: scale(1.06); opacity: 1; }
+  100% { transform: none; }
+}
+.price-pop { display: inline-block; transform-origin: left center; animation: price-pop 0.45s cubic-bezier(0.3, 1.4, 0.5, 1); }
+
 @media (prefers-reduced-motion: reduce) {
   .hero-in, .word-mask > span, .marker, .count, .drift-a, .drift-b, .float-slow, .float-slower,
-  .sheen::after, .toast-in, .ping, .halo, .marquee, .travel-line, .anim, .svc-panel, .svc-item, .scroll-shot, .net-pulse, .cta-ring, .success-pop, .lightbox[open] {
+  .sheen::after, .toast-in, .ping, .halo, .marquee, .travel-line, .anim, .svc-panel, .svc-item, .scroll-shot, .net-pulse, .cta-ring, .success-pop, .lightbox[open], .price-pop {
     animation: none !important;
   }
   .btn-shine::before, .sheen::after { display: none; }

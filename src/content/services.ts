@@ -87,7 +87,7 @@ export const services: Service[] = [
       { title: "Build and test", body: "Development, content entry, speed and device testing.", time: "Weeks 3-5" },
       { title: "Launch and hand over", body: "Redirects, tracking checks, training and handover of every login.", time: "Week 6" },
     ],
-    price: { from: "£[X]", unit: "one-off", note: "Typical small business sites take 4 to 6 weeks." },
+    price: { from: "£99", unit: "one-off", note: "Typical small business sites take 4 to 6 weeks." },
     priceFactors: [
       "Number of pages and unique page designs",
       "Online shop, booking system or other integrations",
@@ -161,7 +161,7 @@ export const services: Service[] = [
       { title: "Build content and links", body: "New pages and articles, local listings and genuine links.", time: "Months 2-6" },
       { title: "Measure and refine", body: "Monthly reports and a plan for the month ahead.", time: "Monthly" },
     ],
-    price: { from: "£[X]", unit: "per month", note: "Rolling monthly agreement." },
+    price: { from: "£299", unit: "per month", note: "Rolling monthly agreement." },
     priceFactors: [
       "How competitive your keywords are",
       "Local only, or national as well",
@@ -228,7 +228,7 @@ export const services: Service[] = [
       { title: "Launch", body: "Campaigns built, approved and launched on a controlled budget.", time: "Week 2" },
       { title: "Optimise", body: "Weekly checks, monthly reports and budget moved to what works.", time: "Ongoing" },
     ],
-    price: { from: "£[X]", unit: "per month management", note: "Ad spend is paid by you directly to Google or Meta, with no markup." },
+    price: { from: "£349", unit: "per month", note: "Ad spend is paid by you directly to Google or Meta, with no markup." },
     priceFactors: ["Monthly ad spend", "Number of campaigns and platforms", "Shopping feeds and ecommerce tracking", "Landing pages needed"],
     faqs: [
       {
@@ -289,7 +289,7 @@ export const services: Service[] = [
       { title: "Create and launch", body: "Posts designed and scheduled, campaigns launched.", time: "Weeks 3-4" },
       { title: "Report", body: "Monthly results and the next month's plan.", time: "Monthly" },
     ],
-    price: { from: "£[X]", unit: "per month", note: "Ad spend is paid directly to Meta or LinkedIn." },
+    price: { from: "£149", unit: "per month", note: "Ad spend is paid directly to Meta or LinkedIn." },
     priceFactors: ["Number of platforms", "Posts and videos per month", "Paid campaign management", "Photo or video shoots"],
     faqs: [
       {
