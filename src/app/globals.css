@@ -1,0 +1,371 @@
+@import "tailwindcss";
+
+/* Brand colours from the plan. White text sits on brand-dark (#047857, 5.5:1 contrast).
+   White on #059669 is only 3.8:1, so #059669 is kept for accents, icons and large text. */
+@theme {
+  --color-brand: #059669;
+  --color-brand-dark: #047857;
+  --color-brand-deeper: #065f46;
+  --color-brand-light: #34d399;
+  --color-ink: #0a0a0a;
+  --color-mist: #f4f4f5;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+}
+
+/* ---------- Hero entrance ---------- */
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-in {
+  animation: hero-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Headline words rise one by one from behind a mask. */
+@keyframes word-up {
+  from { transform: translateY(105%); }
+  to { transform: none; }
+}
+.word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+.word-mask > span {
+  display: inline-block;
+  animation: word-up 0.9s cubic-bezier(0.2, 0.75, 0.15, 1) both;
+}
+
+/* Marker highlight under the keyword sweeps in from the left. */
+@keyframes marker {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.marker {
+  transform-origin: left center;
+  animation: marker 0.8s 0.85s cubic-bezier(0.6, 0, 0.2, 1) both;
+}
+
+/* ---------- Count-up numbers ----------
+   The real number is in the HTML for screen readers and search engines.
+   The visible digits are a CSS counter that animates from 0 to --to. */
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+@keyframes count-up {
+  from { --num: 0; }
+  to { --num: var(--to); }
+}
+.count {
+  font-variant-numeric: tabular-nums;
+  animation: count-up 2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--count-delay, 0.5s);
+  counter-reset: num var(--num);
+}
+.count::after {
+  content: counter(num);
+}
+
+/* ---------- Ambient background ---------- */
+@keyframes drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-60px, 40px) scale(1.12); }
+}
+@keyframes drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, -50px) scale(0.92); }
+}
+.drift-a { animation: drift-a 18s ease-in-out infinite; }
+.drift-b { animation: drift-b 22s ease-in-out infinite; }
+
+.dot-grid {
+  background-image: radial-gradient(rgb(10 10 10 / 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse 70% 60% at 70% 40%, #000 20%, transparent 75%);
+}
+
+/* ---------- Proof cards ---------- */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.float-slow { animation: float-y 6s ease-in-out infinite; }
+.float-slower { animation: float-y 8s ease-in-out 1s infinite; }
+
+/* A light streak passes over the results screenshot every few seconds. */
+@keyframes sheen {
+  0% { transform: translateX(-120%) skewX(-20deg); }
+  60%, 100% { transform: translateX(260%) skewX(-20deg); }
+}
+.sheen {
+  position: relative;
+  overflow: hidden;
+}
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.65), transparent);
+  animation: sheen 4.5s 2.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Notification slides in from the right with a soft pop. */
+@keyframes toast-in {
+  0% { opacity: 0; transform: translateX(40px) scale(0.96); }
+  70% { opacity: 1; transform: translateX(-4px) scale(1); }
+  100% { opacity: 1; transform: none; }
+}
+.toast-in { animation: toast-in 0.8s 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+@keyframes ping {
+  75%, 100% { transform: scale(2.2); opacity: 0; }
+}
+.ping { animation: ping 1.6s cubic-bezier(0, 0, 0.2, 1) infinite; }
+
+/* ---------- Buttons ---------- */
+/* A light sweep runs across the button on hover. */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.28) 50%, transparent 70%);
+  transform: translateX(-110%);
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.btn-shine:hover::before { transform: translateX(110%); }
+
+/* Soft pulsing halo that draws the eye to the main call to action. */
+@keyframes halo {
+  0% { box-shadow: 0 0 0 0 rgb(4 120 87 / 0.45); }
+  100% { box-shadow: 0 0 0 16px rgb(4 120 87 / 0); }
+}
+.halo { animation: halo 2.6s 2s ease-out infinite; }
+
+/* ---------- Header links ---------- */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.2rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-brand-light);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---------- Results strip ---------- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee { animation: marquee 50s linear infinite; }
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+@keyframes travel {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(300%); }
+}
+.travel-line { animation: travel 6s ease-in-out infinite; }
+
+/* ---------- Scroll reveal ----------
+   Hidden only when JavaScript runs (html.js) and the block is not yet in view. */
+.reveal-up {
+  transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--d, 0s);
+}
+.js [data-inview="false"] .reveal-up {
+  opacity: 0;
+  transform: translateY(26px);
+}
+/* Illustrations wait until their block scrolls into view. */
+.js [data-inview="false"] .anim { animation-play-state: paused; }
+
+.dot-grid-soft {
+  background-image: radial-gradient(rgb(10 10 10 / 0.08) 1px, transparent 1px);
+  background-size: 16px 16px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 30%, transparent 80%);
+}
+
+/* Problem 1: speed gauge. Resting styles are the finished state. */
+.gauge-fill { stroke-dasharray: 100; stroke-dashoffset: 6; animation: gauge-fill 1.8s var(--base, 0s) cubic-bezier(0.3, 0.7, 0.2, 1) both; }
+@keyframes gauge-fill { from { stroke-dashoffset: 100; } }
+.gauge-needle { transform: rotate(72deg); animation: gauge-needle 1.8s var(--base, 0s) cubic-bezier(0.3, 1.35, 0.4, 1) both; }
+@keyframes gauge-needle { from { transform: rotate(-85deg); } }
+
+/* Problem 2: search typing, then "your business" climbs to the top. */
+.typing { clip-path: inset(0 0 0 0); animation: typing 1.3s var(--base, 0s) steps(20, end) both; }
+@keyframes typing { from { clip-path: inset(0 100% 0 0); } }
+.caret { animation: blink 0.9s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.serp-up { transform: translateY(-100px); animation: serp-up 0.9s calc(var(--base, 0s) + 1.5s) cubic-bezier(0.5, 0, 0.2, 1) both; }
+@keyframes serp-up { from { transform: none; } }
+.serp-down-1, .serp-down-2 { transform: translateY(50px); animation: serp-down 0.9s calc(var(--base, 0s) + 1.5s) cubic-bezier(0.5, 0, 0.2, 1) both; }
+@keyframes serp-down { from { transform: none; } }
+
+/* Problem 3: contact buttons pop in, then an enquiry arrives. */
+.pop { animation: pop 0.55s calc(var(--base, 0s) + var(--d, 0s)) cubic-bezier(0.3, 1.5, 0.5, 1) both; }
+@keyframes pop { from { opacity: 0; transform: scale(0.5); } }
+.notify { animation: notify 0.7s calc(var(--base, 0s) + 1.1s) cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+@keyframes notify { from { opacity: 0; transform: translateY(18px) scale(0.96); } }
+
+/* ---------- Services switcher ---------- */
+.svc-panel:not([hidden]) { animation: svc-in 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+@keyframes svc-in { from { opacity: 0; transform: translateY(12px) scale(0.99); } }
+.svc-panel:not([hidden]) .svc-item { animation: svc-in 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+/* Full-page screenshot glides from top to bottom and back inside its frame. */
+@keyframes scroll-shot {
+  0%, 10% { object-position: 50% 0%; }
+  90%, 100% { object-position: 50% 100%; }
+}
+.scroll-shot { animation: scroll-shot 20s ease-in-out infinite alternate; }
+
+/* Scrollable rows (tabs, carousels) without a visible scrollbar. */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ---------- Process timeline ----------
+   The line draws across when the block scrolls into view; each step marker
+   lights up from grey as the line reaches it (its --d delay). */
+.timeline-x, .timeline-y {
+  transition: transform var(--t, 1.6s) cubic-bezier(0.45, 0, 0.2, 1) 0.2s;
+}
+.timeline-x { transform-origin: left center; }
+.timeline-y { height: 100%; transform-origin: top center; }
+.js [data-inview="false"] .timeline-x { transform: scaleX(0); }
+.js [data-inview="false"] .timeline-y { transform: scaleY(0); }
+
+.step-dot {
+  transition: background-color 0.4s ease var(--d, 0s), box-shadow 0.4s ease var(--d, 0s), transform 0.3s;
+}
+.js [data-inview="false"] .step-dot {
+  background-color: #d4d4d8;
+  box-shadow: none;
+}
+
+/* ---------- Why us comparison ----------
+   Rows slide in one by one, each green tick pops, and a green glow sweeps
+   down the "How we work" column. */
+.cmp-row {
+  transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s), background-color 0.3s;
+}
+.js [data-inview="false"] .cmp-row { opacity: 0; transform: translateX(-16px); }
+.cmp-check {
+  transition: transform 0.45s cubic-bezier(0.3, 1.6, 0.5, 1) calc(var(--d, 0s) + 0.25s);
+}
+.js [data-inview="false"] .cmp-check { transform: scale(0); }
+.col-sweep {
+  transform-origin: top;
+  transition: transform 1.4s cubic-bezier(0.45, 0, 0.2, 1) 0.2s;
+}
+.js [data-inview="false"] .col-sweep { transform: scaleY(0); }
+
+/* ---------- Service-area network ---------- */
+.net-line {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.9s cubic-bezier(0.45, 0, 0.2, 1) var(--d, 0s);
+}
+/* The dashed UK link keeps its dash pattern and fades in instead. */
+path.net-line { stroke-dasharray: 2 7; transition: opacity 0.8s ease var(--d, 0s); }
+.js [data-inview="false"] .net-line { stroke-dashoffset: 100; }
+.js [data-inview="false"] path.net-line { opacity: 0; }
+.net-node { transition: transform 0.5s cubic-bezier(0.3, 1.6, 0.5, 1) var(--d, 0s), opacity 0.3s ease var(--d, 0s); }
+.js [data-inview="false"] .net-node { transform: scale(0); opacity: 0; }
+@keyframes net-pulse {
+  from { transform: scale(1); opacity: 0.7; }
+  to { transform: scale(3.2); opacity: 0; }
+}
+.net-pulse { transform-box: fill-box; transform-origin: center; animation: net-pulse 2.4s ease-out infinite; }
+
+/* ---------- Final call to action ---------- */
+.cta-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 60% 70% at 75% 50%, #000 20%, transparent 75%);
+}
+@keyframes cta-ring {
+  from { transform: translate(-50%, -50%) scale(0.6); opacity: 0.8; }
+  to { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+}
+.cta-ring { transform: translate(-50%, -50%); animation: cta-ring 6s ease-out infinite; }
+@keyframes success-pop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+.success-pop { animation: success-pop 0.6s cubic-bezier(0.3, 1.4, 0.5, 1) both; }
+
+/* ---------- Footer wordmark ----------
+   Outlined text whose green fill wipes in from the left when it scrolls into view. */
+.wordmark {
+  color: transparent;
+  /* Two layers: the green fill (animated width) over a dim base, both clipped to the text. */
+  background-image: linear-gradient(90deg, var(--color-brand-dark), var(--color-brand-light)), linear-gradient(rgb(255 255 255 / 0.07), rgb(255 255 255 / 0.07));
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: background-size 1.6s cubic-bezier(0.45, 0, 0.2, 1) 0.2s;
+}
+.js [data-inview="false"] .wordmark { background-size: 0% 100%, 100% 100%; }
+
+html { scroll-behavior: smooth; }
+
+/* ---------- Screenshot lightbox ---------- */
+.lightbox[open] { animation: lightbox-in 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.lightbox[open]::backdrop { animation: lightbox-fade 0.35s ease; }
+@keyframes lightbox-in { from { opacity: 0; transform: scale(0.94); } }
+@keyframes lightbox-fade { from { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-in, .word-mask > span, .marker, .count, .drift-a, .drift-b, .float-slow, .float-slower,
+  .sheen::after, .toast-in, .ping, .halo, .marquee, .travel-line, .anim, .svc-panel, .svc-item, .scroll-shot, .net-pulse, .cta-ring, .success-pop, .lightbox[open] {
+    animation: none !important;
+  }
+  .btn-shine::before, .sheen::after { display: none; }
+  .reveal-up { transition: none; }
+  .js [data-inview="false"] .reveal-up { opacity: 1; transform: none; }
+  .cmp-row, .cmp-check, .col-sweep { transition: none; }
+  .js [data-inview="false"] .cmp-row, .js [data-inview="false"] .cmp-check, .js [data-inview="false"] .col-sweep { opacity: 1; transform: none; }
+  .net-line, .net-node { transition: none; }
+  .js [data-inview="false"] .net-line { stroke-dashoffset: 0; opacity: 1; }
+  .js [data-inview="false"] .net-node { transform: none; opacity: 1; }
+  html { scroll-behavior: auto; }
+  .wordmark { transition: none; }
+  .js [data-inview="false"] .wordmark { background-size: 100% 100%, 100% 100%; }
+  /* Without the animation, show the final number straight away. */
+  .count { counter-reset: num var(--to); }
+}

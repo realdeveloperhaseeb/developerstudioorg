@@ -1,0 +1,27 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+/build
+next-env.d.ts
+*.tsbuildinfo
+
+# env
+.env*
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+.vercel
+
+# internal planning notes, not for the public repo
+/DeveloperStudio revamp plan*.md
+/idea-content.txt
+/projects.md
+/scripts/shots-raw/
+/case-studies-doc.txt
