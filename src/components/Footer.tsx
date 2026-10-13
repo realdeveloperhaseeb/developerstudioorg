@@ -5,6 +5,7 @@ import { legalLinks, site } from "@/content/site";
 import { services } from "@/content/services";
 import { WhatsAppIcon } from "./icons";
 import { InView } from "./InView";
+import { SocialIcons } from "./SocialIcons";
 import { CookieSettingsLink } from "./CookieConsent";
 
 const company = [
@@ -17,9 +18,6 @@ const company = [
   { label: "FAQ", href: "/faq/" },
   { label: "Contact", href: "/contact/" },
 ];
-
-// Social profiles are listed in site.ts; ones still marked [placeholder] are not shown.
-const socials = site.socials.filter((s) => !s.href.startsWith("["));
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
@@ -108,17 +106,7 @@ export function Footer() {
                 {site.hours}
               </li>
             </ul>
-            {socials.length > 0 && (
-              <ul className="mt-6 flex gap-3">
-                {socials.map((s) => (
-                  <li key={s.name}>
-                    <a href={s.href} target="_blank" rel="noopener" className="text-[14px] font-semibold text-zinc-300 hover:text-brand-light">
-                      {s.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <SocialIcons className="mt-7" />
           </div>
         </div>
 

@@ -21,10 +21,13 @@ export const site = {
   email: "ceo@developerstudio.org",
   hours: "Phone and WhatsApp 24/7 across our UK and PK teams",
   replyPromise: "We reply within one working day",
+  // Taken from the footer of the previous developerstudio.org (October 2026).
   socials: [
-    { name: "LinkedIn", href: "[LinkedIn URL]" },
-    { name: "Facebook", href: "[Facebook URL]" },
-    { name: "Instagram", href: "[Instagram URL]" },
+    { name: "Facebook", href: "https://www.facebook.com/developerstudio.org" },
+    { name: "Instagram", href: "https://www.instagram.com/developerstudio_org/" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/developer-studio-org/" },
+    { name: "X", href: "https://x.com/developerstudio" },
+    { name: "YouTube", href: "https://www.youtube.com/@developerstudio" },
   ],
   googleProfile: "[Google Business Profile review link]",
 } as const;
