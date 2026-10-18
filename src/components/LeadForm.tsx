@@ -59,7 +59,7 @@ export function LeadForm({
   if (sent) {
     return (
       <div role="status" className="flex min-h-[420px] flex-col items-center justify-center text-center">
-        <span className="success-pop flex size-16 items-center justify-center rounded-full bg-brand-dark text-white">
+        <span className="success-pop flex size-16 items-center justify-center rounded-sm bg-brand-dark text-white">
           <Check aria-hidden className="size-8" strokeWidth={3} />
         </span>
         <p className="mt-6 text-2xl font-extrabold text-ink">Thanks, nearly done</p>
@@ -166,7 +166,7 @@ export function LeadForm({
 
       <button
         type="submit"
-        className="btn-shine group mt-1 inline-flex h-14 items-center justify-center gap-2 rounded-full bg-brand-dark px-7 text-[16px] font-bold text-white transition-colors hover:bg-brand-deeper"
+        className="btn-shine group mt-1 inline-flex h-14 items-center justify-center gap-2 rounded-sm bg-brand-dark px-7 text-[16px] font-bold text-white transition-colors hover:bg-brand-deeper"
       >
         {submitLabel}
         <ArrowRight aria-hidden className="size-5 transition-transform duration-300 group-hover:translate-x-1" />

@@ -85,7 +85,6 @@ export default function PricingPage() {
       <section className="relative overflow-clip bg-white">
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="dot-grid absolute inset-0" />
-          <div className="drift-a absolute top-[-15%] right-[-10%] h-[560px] w-[560px] rounded-full bg-brand/15 blur-[110px]" />
         </div>
         <div className="relative mx-auto max-w-[1200px] px-4 pt-8 pb-14 sm:px-6 sm:pt-10 sm:pb-16">
           <Breadcrumbs
@@ -97,7 +96,7 @@ export default function PricingPage() {
           />
           <div className="mt-8 grid items-end gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
-              <h1 className="hero-in text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.035em] text-ink [animation-delay:80ms] sm:text-6xl">
+              <h1 className="hero-in text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.02em] text-ink [animation-delay:80ms] sm:text-6xl">
                 Clear prices,{" "}
                 <span className="relative isolate whitespace-nowrap text-brand-dark">
                   <span aria-hidden className="marker absolute inset-x-0 bottom-[0.08em] -z-10 h-[0.3em] rounded-sm bg-brand/20" />
@@ -133,14 +132,13 @@ export default function PricingPage() {
                   className={`reveal-up ${i < 3 ? "lg:col-span-2" : "lg:col-span-3"}`}
                   style={{ "--d": `${0.06 + i * 0.08}s` } as CSSProperties}
                 >
-                  <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white p-7 ring-1 ring-brand transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgb(4_120_87/0.5)] hover:ring-2">
-                    <div aria-hidden className="absolute -top-24 -right-24 size-56 rounded-full bg-brand/10 blur-2xl transition-transform duration-700 group-hover:scale-125" />
+                  <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white p-7 ring-1 ring-brand transition duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857] hover:ring-2">
                     <div className="relative flex items-center justify-between gap-3">
                       <span className="flex size-12 items-center justify-center rounded-2xl bg-brand-dark text-white transition-transform duration-300 group-hover:-rotate-6">
                         <Icon aria-hidden className="size-6" />
                       </span>
                       <span
-                        className={`rounded-full px-3 py-1 text-[12px] font-bold ${p.billing === "monthly" ? "bg-ink text-white" : "bg-brand/10 text-brand-dark"}`}
+                        className={`rounded-sm px-3 py-1 text-[12px] font-bold ${p.billing === "monthly" ? "bg-ink text-white" : "bg-brand/10 text-brand-dark"}`}
                       >
                         {p.billing === "monthly" ? "Monthly" : "One-off"}
                       </span>
@@ -157,7 +155,7 @@ export default function PricingPage() {
                     <ul className="relative mt-5 grid gap-2.5 border-t border-zinc-200 pt-5">
                       {p.includes.map((item) => (
                         <li key={item} className="flex items-start gap-2.5 text-[14px] text-zinc-700">
-                          <span className="mt-0.5 inline-flex size-[18px] shrink-0 items-center justify-center rounded-full bg-brand-dark text-white">
+                          <span className="mt-0.5 inline-flex size-[18px] shrink-0 items-center justify-center rounded-sm bg-brand-dark text-white">
                             <Check aria-hidden className="size-3" strokeWidth={3.5} />
                           </span>
                           {item}
@@ -167,7 +165,7 @@ export default function PricingPage() {
                     <div className="relative mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-7">
                       <Link
                         href="/free-growth-plan/"
-                        className="btn-shine group/btn inline-flex h-11 items-center gap-2 rounded-full bg-brand-dark px-5 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
+                        className="btn-shine group/btn inline-flex h-11 items-center gap-2 rounded-sm bg-brand-dark px-5 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
                       >
                         Get a custom offer
                         <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -194,7 +192,7 @@ export default function PricingPage() {
               <span className="h-px w-6 bg-brand-dark" />
               Build your package
             </p>
-            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-5xl">See your starting price</h2>
+            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-5xl">See your starting price</h2>
             <p className="reveal-up mt-5 text-lg leading-relaxed text-zinc-600 [--d:0.16s]">
               Tick what you need. We will send a custom offer for exactly that mix.
             </p>
@@ -209,7 +207,7 @@ export default function PricingPage() {
       <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
           <InView>
-            <h2 className="reveal-up text-3xl font-extrabold tracking-[-0.03em] text-ink sm:text-4xl">What changes the price</h2>
+            <h2 className="reveal-up text-3xl font-extrabold tracking-[-0.015em] text-ink sm:text-4xl">What changes the price</h2>
             <div className="reveal-up mt-8 overflow-x-auto rounded-3xl ring-1 ring-brand [--d:0.1s]">
               <table className="w-full min-w-[640px] text-left text-[15px]">
                 <thead>
@@ -238,14 +236,13 @@ export default function PricingPage() {
 
       {/* Terms in plain words */}
       <section className="relative overflow-clip bg-black py-20 text-white sm:py-24">
-        <div aria-hidden className="drift-b pointer-events-none absolute top-[10%] right-[-10%] h-[480px] w-[480px] rounded-full bg-brand/20 blur-[130px]" />
         <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6">
           <InView className="max-w-2xl">
             <p className="reveal-up inline-flex items-center gap-2 text-[13px] font-bold tracking-[0.16em] text-brand-light uppercase">
               <span className="h-px w-6 bg-brand-light" />
               In plain words
             </p>
-            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.03em] [--d:0.08s] sm:text-5xl">Contracts, payment and ownership</h2>
+            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.015em] [--d:0.08s] sm:text-5xl">Contracts, payment and ownership</h2>
           </InView>
           <InView as="ul" className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" threshold={0.2}>
             {terms.map((t, i) => (

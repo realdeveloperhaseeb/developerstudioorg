@@ -19,12 +19,6 @@ export function CtaSection({
       {/* Signature background: rings ripple out from behind the form, over a faint grid. */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="cta-grid absolute inset-0" />
-        <div className="absolute top-1/2 right-[18%] size-0">
-          {[0, 1, 2, 3].map((i) => (
-            <span key={i} className="cta-ring absolute top-1/2 left-1/2 size-[260px] rounded-full border border-white/25" style={{ animationDelay: `${i * 1.5}s` }} />
-          ))}
-        </div>
-        <div className="drift-a absolute -top-32 -left-24 h-[420px] w-[420px] rounded-full bg-brand-light/25 blur-[120px]" />
       </div>
 
       <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_0.95fr] lg:gap-16">
@@ -33,7 +27,7 @@ export function CtaSection({
             <span className="h-px w-6 bg-white/60" />
             Free growth plan
           </p>
-          <h2 className="reveal-up mt-4 text-4xl leading-[1.05] font-extrabold tracking-[-0.03em] [--d:0.08s] sm:text-5xl lg:text-6xl">
+          <h2 className="reveal-up mt-4 text-4xl leading-[1.05] font-extrabold tracking-[-0.015em] [--d:0.08s] sm:text-5xl lg:text-6xl">
             {title}
           </h2>
           <p className="reveal-up mt-6 max-w-lg text-lg leading-relaxed text-white/85 [--d:0.16s]">
@@ -44,7 +38,7 @@ export function CtaSection({
           <ul className="reveal-up mt-8 grid gap-3 [--d:0.24s]">
             {promises.map((p) => (
               <li key={p} className="flex items-start gap-3 text-[16px] text-white">
-                <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-white text-brand-dark">
+                <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-sm bg-white text-brand-dark">
                   <Check aria-hidden className="size-3" strokeWidth={4} />
                 </span>
                 {p}
@@ -55,7 +49,7 @@ export function CtaSection({
           <div className="reveal-up mt-9 flex flex-wrap gap-3 [--d:0.32s]">
             <a
               href={`tel:${site.phones.uk.tel}`}
-              className="btn-shine group inline-flex h-12 items-center gap-2 rounded-full bg-black px-6 text-[15px] font-bold text-white transition-transform hover:-translate-y-0.5"
+              className="btn-shine group inline-flex h-12 items-center gap-2 rounded-sm bg-black px-6 text-[15px] font-bold text-white transition-transform hover:-translate-y-0.5"
             >
               <Phone aria-hidden className="size-4 transition-transform duration-300 group-hover:-rotate-12" />
               Call {site.phones.uk.display}
@@ -64,7 +58,7 @@ export function CtaSection({
               href={site.whatsapp}
               target="_blank"
               rel="noopener"
-              className="inline-flex h-12 items-center gap-2 rounded-full border-2 border-white/70 px-6 text-[15px] font-bold text-white transition-colors hover:border-white hover:bg-white hover:text-brand-dark"
+              className="inline-flex h-12 items-center gap-2 rounded-sm border-2 border-white/70 px-6 text-[15px] font-bold text-white transition-colors hover:border-white hover:bg-white hover:text-brand-dark"
             >
               <WhatsAppIcon className="size-[18px]" />
               WhatsApp us

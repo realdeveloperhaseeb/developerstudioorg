@@ -25,7 +25,7 @@ export function Gallery({ images, cols = 2, showCaptions = true }: { images: (Sh
             <button
               type="button"
               onClick={() => open(img)}
-              className="group relative block w-full overflow-hidden rounded-2xl bg-white p-3 text-left ring-1 ring-brand transition duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgb(4_120_87/0.5)]"
+              className="group relative block w-full overflow-hidden rounded-2xl bg-white p-3 text-left ring-1 ring-brand transition duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857]"
             >
               <span className="sheen block overflow-hidden rounded-xl ring-1 ring-zinc-200">
                 <Image
@@ -37,14 +37,14 @@ export function Gallery({ images, cols = 2, showCaptions = true }: { images: (Sh
                   className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.03]"
                 />
               </span>
-              <span className="absolute top-5 right-5 flex size-9 items-center justify-center rounded-full bg-black/70 text-white opacity-0 backdrop-blur transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+              <span className="absolute top-5 right-5 flex size-9 items-center justify-center rounded-sm bg-black/70 text-white opacity-0 backdrop-blur transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
                 <Maximize2 aria-hidden className="size-4" />
               </span>
               <span className="sr-only">Open full size: </span>
               {img.title ? (
                 <span className="mt-3 flex items-center justify-between gap-3 px-1">
                   <span className="text-[16px] font-bold text-ink">{img.title}</span>
-                  {img.tag && <span className="shrink-0 rounded-full bg-mist px-2.5 py-1 text-[12px] font-medium text-zinc-600">{img.tag}</span>}
+                  {img.tag && <span className="shrink-0 rounded-sm bg-mist px-2.5 py-1 text-[12px] font-medium text-zinc-600">{img.tag}</span>}
                 </span>
               ) : (
                 showCaptions && <span className="mt-3 block px-1 text-[13px] leading-snug text-zinc-500">{img.alt}</span>
@@ -69,7 +69,7 @@ export function Gallery({ images, cols = 2, showCaptions = true }: { images: (Sh
               type="button"
               onClick={() => dialog.current?.close()}
               aria-label="Close"
-              className="absolute -top-12 right-0 flex size-10 items-center justify-center rounded-full bg-white text-ink transition-transform hover:rotate-90"
+              className="absolute -top-12 right-0 flex size-10 items-center justify-center rounded-sm bg-white text-ink transition-transform hover:rotate-90"
             >
               <X className="size-5" />
             </button>

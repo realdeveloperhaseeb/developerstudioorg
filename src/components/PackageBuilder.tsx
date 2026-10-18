@@ -64,7 +64,6 @@ export function PackageBuilder() {
 
       {/* Running total */}
       <aside aria-live="polite" className="relative overflow-hidden rounded-3xl bg-ink p-7 text-white lg:sticky lg:top-24 lg:self-start">
-        <div aria-hidden className="absolute -top-20 -right-20 size-60 rounded-full bg-brand/30 blur-3xl" />
         <p className="relative text-[12px] font-bold tracking-[0.16em] text-brand-light uppercase">Your starting price</p>
         {chosen.length === 0 ? (
           <p className="relative mt-4 text-lg text-zinc-300">Tick the services you need to see a starting price.</p>
@@ -110,7 +109,7 @@ export function PackageBuilder() {
             target="_blank"
             rel="noopener"
             aria-disabled={chosen.length === 0}
-            className={`btn-shine inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper ${
+            className={`btn-shine inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper ${
               chosen.length === 0 ? "pointer-events-none opacity-40" : ""
             }`}
           >
@@ -119,7 +118,7 @@ export function PackageBuilder() {
           </a>
           <Link
             href="/free-growth-plan/"
-            className="group inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-6 text-[15px] font-bold text-white transition-colors hover:border-white"
+            className="group inline-flex h-12 items-center justify-center gap-2 rounded-sm border-2 border-white/80 px-6 text-[15px] font-bold text-white transition-colors hover:bg-white hover:text-ink"
           >
             Or get a free growth plan
             <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />

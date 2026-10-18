@@ -23,7 +23,7 @@ export function SocialIcons({ className = "" }: { className?: string }) {
             target="_blank"
             rel="noopener me"
             aria-label={`DeveloperStudio on ${s.name}`}
-            className="flex size-10 items-center justify-center rounded-full bg-white/[0.06] text-zinc-300 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:bg-brand-dark hover:text-white hover:ring-brand-dark"
+            className="flex size-10 items-center justify-center rounded-sm bg-white/[0.06] text-zinc-300 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:bg-brand-dark hover:text-white hover:ring-brand-dark"
           >
             <svg viewBox="0 0 24 24" aria-hidden className="size-[18px]" fill="currentColor">
               <path d={paths[s.name]} />

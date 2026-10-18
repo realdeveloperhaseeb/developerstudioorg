@@ -36,8 +36,8 @@ export function LegalToc({ items, articleId = "legal-article" }: { items: { id: 
   return (
     <nav aria-label="On this page" className="rounded-3xl bg-mist p-6">
       <p className="text-[12px] font-bold tracking-[0.16em] text-brand-dark uppercase">On this page</p>
-      <div className="mt-3 h-1 overflow-hidden rounded-full bg-zinc-200">
-        <div className="h-full rounded-full bg-brand-dark transition-[width] duration-150" style={{ width: `${progress * 100}%` }} />
+      <div className="mt-3 h-1 overflow-hidden rounded-sm bg-zinc-200">
+        <div className="h-full rounded-sm bg-brand-dark transition-[width] duration-150" style={{ width: `${progress * 100}%` }} />
       </div>
       <ol className="mt-4 grid gap-1">
         {items.map((i) => (
@@ -51,7 +51,7 @@ export function LegalToc({ items, articleId = "legal-article" }: { items: { id: 
             >
               <span
                 aria-hidden
-                className={`absolute top-1.5 bottom-1.5 left-0 w-[3px] rounded-full bg-brand-dark transition-transform duration-300 ${active === i.id ? "scale-y-100" : "scale-y-0"}`}
+                className={`absolute top-1.5 bottom-1.5 left-0 w-[3px] rounded-sm bg-brand-dark transition-transform duration-300 ${active === i.id ? "scale-y-100" : "scale-y-0"}`}
               />
               {i.heading}
             </a>

@@ -17,12 +17,12 @@ export function PlatformFilter({ items }: { items: { platform: string; node: Rea
             type="button"
             aria-pressed={active === p}
             onClick={() => setActive(p)}
-            className={`inline-flex shrink-0 items-center gap-2 rounded-full px-5 py-2.5 text-[15px] font-bold whitespace-nowrap transition-all duration-300 ${
+            className={`inline-flex shrink-0 items-center gap-2 rounded-sm px-5 py-2.5 text-[15px] font-bold whitespace-nowrap transition-all duration-300 ${
               active === p ? "bg-brand-dark text-white shadow-[0_8px_24px_-8px_rgb(4_120_87/0.9)]" : "bg-white text-zinc-600 ring-1 ring-zinc-200 hover:text-ink hover:ring-brand"
             }`}
           >
             {p}
-            <span className={`rounded-full px-2 py-0.5 text-[12px] ${active === p ? "bg-white/20" : "bg-mist"}`}>{count(p)}</span>
+            <span className={`rounded-sm px-2 py-0.5 text-[12px] ${active === p ? "bg-white/20" : "bg-mist"}`}>{count(p)}</span>
           </button>
         ))}
       </div>

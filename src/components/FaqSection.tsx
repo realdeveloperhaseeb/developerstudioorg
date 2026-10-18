@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type CSSProperties } from "react";
-import { Phone, Plus } from "lucide-react";
+import { Phone, Minus, Plus } from "lucide-react";
 import { homeFaqs } from "@/content/faqs";
 import type { Faq } from "@/content/services";
 import { site } from "@/content/site";
@@ -29,7 +29,6 @@ export function FaqSection({
   return (
     <section className="relative overflow-clip bg-black py-20 text-white sm:py-28">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <div aria-hidden className="drift-a pointer-events-none absolute bottom-[-20%] left-[-10%] h-[520px] w-[520px] rounded-full bg-brand/20 blur-[130px]" />
 
       <div className="relative mx-auto grid max-w-[1200px] gap-12 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <InView className="lg:sticky lg:top-28 lg:self-start">
@@ -37,7 +36,7 @@ export function FaqSection({
             <span className="h-px w-6 bg-brand-light" />
             FAQ
           </p>
-          <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.03em] [--d:0.08s] sm:text-5xl">{title}</h2>
+          <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.015em] [--d:0.08s] sm:text-5xl">{title}</h2>
           <p className="reveal-up mt-5 text-lg leading-relaxed text-zinc-400 [--d:0.16s]">
             {intro}
           </p>
@@ -48,7 +47,7 @@ export function FaqSection({
             <div className="mt-5 flex flex-wrap gap-3">
               <a
                 href={`tel:${site.phones.uk.tel}`}
-                className="btn-shine inline-flex h-11 items-center gap-2 rounded-full bg-brand-dark px-5 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
+                className="btn-shine inline-flex h-11 items-center gap-2 rounded-sm bg-brand-dark px-5 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
               >
                 <Phone aria-hidden className="size-4" />
                 Call {site.phones.uk.display}
@@ -57,7 +56,7 @@ export function FaqSection({
                 href={site.whatsapp}
                 target="_blank"
                 rel="noopener"
-                className="inline-flex h-11 items-center gap-2 rounded-full border border-white/20 px-5 text-[15px] font-bold text-white transition-colors hover:border-[#25D366] hover:text-[#25D366]"
+                className="inline-flex h-11 items-center gap-2 rounded-sm border-2 border-white/80 px-5 text-[15px] font-bold text-white transition-colors hover:bg-white hover:text-ink"
               >
                 <WhatsAppIcon className="size-[18px]" />
                 WhatsApp
@@ -98,11 +97,11 @@ export function FaqSection({
                       <span className="flex-1 text-[17px] leading-snug font-bold sm:text-lg">{f.q}</span>
                       <span
                         aria-hidden
-                        className={`flex size-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
-                          isOpen ? "rotate-45 bg-brand-dark text-white" : "bg-white/[0.08] text-zinc-300"
+                        className={`flex size-8 shrink-0 items-center justify-center rounded-sm transition-all duration-300 ${
+                          isOpen ? "bg-brand-dark text-white" : "bg-white/[0.08] text-zinc-300"
                         }`}
                       >
-                        <Plus className="size-4" strokeWidth={2.5} />
+                        {isOpen ? <Minus className="size-4" strokeWidth={2.5} /> : <Plus className="size-4" strokeWidth={2.5} />}
                       </span>
                     </button>
                   </h3>

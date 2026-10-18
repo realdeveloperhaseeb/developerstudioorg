@@ -47,9 +47,9 @@ const related: Record<CaseStudy["platform"], { name: string; href: string }[]> =
 function PlatformBadge({ platform, dark }: { platform: CaseStudy["platform"]; dark?: boolean }) {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[13px] font-semibold ${dark ? "bg-white/10 text-zinc-200" : "bg-white text-zinc-700 ring-1 ring-zinc-200"}`}
+      className={`inline-flex items-center gap-1.5 rounded-sm px-3 py-1 text-[13px] font-semibold ${dark ? "bg-white/10 text-zinc-200" : "bg-white text-zinc-700 ring-1 ring-zinc-200"}`}
     >
-      <span className={`size-2 rounded-full ${platform === "Google Ads" ? "bg-[#fbbc04]" : "bg-[#0866ff]"}`} />
+      <span className={`size-2 rounded-sm ${platform === "Google Ads" ? "bg-[#fbbc04]" : "bg-[#0866ff]"}`} />
       {platform}
     </span>
   );
@@ -82,7 +82,6 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <section className="relative overflow-clip bg-white">
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="dot-grid absolute inset-0" />
-          <div className="drift-a absolute top-[-15%] right-[-10%] h-[560px] w-[560px] rounded-full bg-brand/15 blur-[110px]" />
         </div>
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 px-4 pt-8 pb-16 sm:px-6 sm:pt-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 lg:pb-24">
           <div>
@@ -96,24 +95,24 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             />
             <div className="hero-in mt-8 flex flex-wrap items-center gap-2 [animation-delay:60ms]">
               <PlatformBadge platform={c.platform} />
-              <span className="rounded-full bg-white px-3 py-1 text-[13px] font-medium text-zinc-600 ring-1 ring-zinc-200">{c.sector}</span>
+              <span className="rounded-sm bg-white px-3 py-1 text-[13px] font-medium text-zinc-600 ring-1 ring-zinc-200">{c.sector}</span>
             </div>
             <p className="hero-in mt-5 text-[15px] font-semibold text-brand-dark [animation-delay:100ms]">{c.client}</p>
-            <h1 className="hero-in mt-2 text-[2.4rem] leading-[1.06] font-extrabold tracking-[-0.035em] text-ink [animation-delay:140ms] sm:text-5xl lg:text-[3.4rem]">
+            <h1 className="hero-in mt-2 text-[2.4rem] leading-[1.06] font-extrabold tracking-[-0.02em] text-ink [animation-delay:140ms] sm:text-5xl lg:text-[3.4rem]">
               {c.title}
             </h1>
             <p className="hero-in mt-6 max-w-[600px] text-lg leading-relaxed text-zinc-600 [animation-delay:220ms]">{c.overview}</p>
             <div className="hero-in mt-8 flex flex-wrap gap-3 [animation-delay:300ms]">
               <Link
                 href="/free-growth-plan/"
-                className="btn-shine group inline-flex h-12 items-center gap-2 rounded-full bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
+                className="btn-shine group inline-flex h-12 items-center gap-2 rounded-sm bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
               >
                 Get results like this
                 <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
               <a
                 href="#results"
-                className="inline-flex h-12 items-center rounded-full border border-zinc-300 bg-white px-6 text-[15px] font-bold text-ink transition-colors hover:border-ink"
+                className="inline-flex h-12 items-center rounded-sm border-2 border-ink bg-white px-6 text-[15px] font-bold text-ink transition-colors hover:bg-ink hover:text-white"
               >
                 See the results
               </a>
@@ -122,8 +121,9 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
           {/* Headline result card */}
           <div className="hero-in [animation-delay:240ms]">
-            <div className="float-slow relative overflow-hidden rounded-3xl bg-ink p-7 text-white shadow-[0_40px_80px_-30px_rgb(10_10_10/0.5)] sm:p-8">
-              <div aria-hidden className="absolute -top-20 -right-20 size-64 rounded-full bg-brand/30 blur-3xl" />
+            <div className="brackets relative">
+              <div aria-hidden className="absolute inset-0 translate-x-4 translate-y-4 border-2 border-brand-dark" />
+            <div className="relative overflow-hidden rounded-3xl bg-ink p-7 text-white shadow-[0_40px_80px_-30px_rgb(10_10_10/0.5)] sm:p-8">
               <div className="relative flex items-center justify-between gap-3">
                 <PlatformBadge platform={c.platform} dark />
                 <span className="inline-flex items-center gap-1.5 text-[13px] text-zinc-400">
@@ -155,20 +155,20 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 />
               </div>
             </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* 2. Results */}
       <section id="results" className="relative scroll-mt-20 overflow-clip bg-black py-16 text-white sm:py-24">
-        <div aria-hidden className="drift-b pointer-events-none absolute top-[10%] right-[-10%] h-[480px] w-[480px] rounded-full bg-brand/20 blur-[130px]" />
         <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6">
           <InView className="max-w-2xl">
             <p className="reveal-up inline-flex items-center gap-2 text-[13px] font-bold tracking-[0.16em] text-brand-light uppercase">
               <span className="h-px w-6 bg-brand-light" />
               The results
             </p>
-            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.03em] [--d:0.08s] sm:text-4xl">What the campaign delivered</h2>
+            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.015em] [--d:0.08s] sm:text-4xl">What the campaign delivered</h2>
             <p className="reveal-up mt-4 text-lg text-zinc-400 [--d:0.16s]">Taken straight from the {c.platform} account, {c.period}.</p>
           </InView>
           <InView
@@ -202,12 +202,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               <span className="h-px w-6 bg-brand-dark" />
               What we did
             </p>
-            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-4xl">Strategy and execution</h2>
+            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-4xl">Strategy and execution</h2>
             <ol className="mt-8 grid gap-4">
               {c.strategy.map((s, i) => (
                 <li
                   key={s}
-                  className="reveal-up group flex items-start gap-5 rounded-2xl p-5 ring-1 ring-brand transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-20px_rgb(4_120_87/0.5)] sm:p-6"
+                  className="reveal-up group flex items-start gap-5 rounded-2xl p-5 ring-1 ring-brand transition duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857] sm:p-6"
                   style={{ "--d": `${0.12 + i * 0.1}s` } as CSSProperties}
                 >
                   <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-[15px] font-bold text-white transition-transform duration-300 group-hover:-rotate-6">
@@ -254,7 +254,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         <section className="bg-mist py-16 sm:py-24">
           <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
             <InView>
-              <h2 className="reveal-up text-3xl font-extrabold tracking-[-0.03em] text-ink sm:text-4xl">Performance breakdown</h2>
+              <h2 className="reveal-up text-3xl font-extrabold tracking-[-0.015em] text-ink sm:text-4xl">Performance breakdown</h2>
               <div className="reveal-up mt-8 overflow-x-auto rounded-3xl bg-white ring-1 ring-brand [--d:0.1s]">
                 <table className="w-full min-w-[560px] text-left text-[15px]">
                   <thead>
@@ -301,7 +301,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               <span className="h-px w-6 bg-brand-dark" />
               Proof
             </p>
-            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-4xl">Straight from the ad account</h2>
+            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-4xl">Straight from the ad account</h2>
             <p className="reveal-up mt-4 text-lg text-zinc-600 [--d:0.16s]">Click any screenshot to see it full size.</p>
           </InView>
           <InView className="reveal-up mt-10" threshold={0.1}>
@@ -347,7 +347,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               <Link
                 key={r.href}
                 href={r.href}
-                className="reveal-up group flex items-center justify-between gap-4 rounded-2xl bg-white p-6 ring-1 ring-brand transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_-20px_rgb(4_120_87/0.5)]"
+                className="reveal-up group flex items-center justify-between gap-4 rounded-2xl bg-white p-6 ring-1 ring-brand transition duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857]"
                 style={{ "--d": `${0.08 + i * 0.1}s` } as CSSProperties}
               >
                 <span>
@@ -371,7 +371,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               <li key={o.slug} className="reveal-up" style={{ "--d": `${0.08 + i * 0.1}s` } as CSSProperties}>
                 <Link
                   href={`/case-studies/${o.slug}/`}
-                  className="group flex h-full flex-col rounded-3xl bg-white p-6 ring-1 ring-brand transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-25px_rgb(4_120_87/0.5)]"
+                  className="group flex h-full flex-col rounded-3xl bg-white p-6 ring-1 ring-brand transition duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857]"
                 >
                   <span className="self-start">
                     <PlatformBadge platform={o.platform} />

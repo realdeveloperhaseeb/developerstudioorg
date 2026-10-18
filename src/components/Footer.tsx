@@ -32,7 +32,6 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="relative overflow-hidden bg-black pb-[76px] text-white md:pb-0">
-      <div aria-hidden className="pointer-events-none absolute top-0 left-1/2 h-[380px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/20 blur-[130px]" />
 
       <div className="relative mx-auto max-w-[1200px] px-4 pt-16 sm:px-6 sm:pt-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:gap-10">
@@ -41,10 +40,10 @@ export function Footer() {
               <Image src="/images/developer-studio-logo.png" alt="DeveloperStudio" width={367} height={178} className="h-14 w-auto" />
             </Link>
             <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-zinc-400">{site.entity}</p>
-            <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/10 px-3.5 py-1.5 text-[13px] font-medium text-zinc-300">
+            <p className="mt-4 inline-flex items-center gap-2 rounded-sm border border-white/10 px-3.5 py-1.5 text-[13px] font-medium text-zinc-300">
               <span className="relative flex size-2">
-                <span className="ping absolute inline-flex size-full rounded-full bg-brand-light opacity-70" />
-                <span className="relative inline-flex size-2 rounded-full bg-brand-light" />
+                <span className="ping absolute inline-flex size-full rounded-sm bg-brand-light opacity-70" />
+                <span className="relative inline-flex size-2 rounded-sm bg-brand-light" />
               </span>
               {site.areaLine}
             </p>
@@ -112,7 +111,7 @@ export function Footer() {
 
         {/* Signature: oversized wordmark that fills with green as it scrolls into view. */}
         <InView threshold={0.4}>
-          <p aria-hidden className="wordmark mt-16 pb-[0.06em] text-center text-[12vw] leading-[0.9] font-extrabold tracking-[-0.05em] select-none lg:text-[9.4rem]">
+          <p aria-hidden className="wordmark mt-16 pb-[0.06em] text-center text-[10.6vw] leading-[0.95] font-extrabold tracking-[-0.05em] select-none lg:text-[8.4rem]">
             DeveloperStudio
           </p>
         </InView>
@@ -136,7 +135,7 @@ export function Footer() {
             className="group inline-flex items-center gap-2 self-start font-semibold text-zinc-300 transition-colors hover:text-white md:self-auto"
           >
             Back to top
-            <span className="flex size-9 items-center justify-center rounded-full border border-white/20 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brand-light group-hover:bg-brand-dark">
+            <span className="flex size-9 items-center justify-center rounded-sm border border-white/20 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brand-light group-hover:bg-brand-dark">
               <ArrowUp aria-hidden className="size-4" />
             </span>
           </a>

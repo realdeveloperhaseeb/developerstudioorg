@@ -20,14 +20,14 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
               target="_blank"
               rel="noopener"
               aria-label="WhatsApp us"
-              className="flex size-10 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:border-[#25D366] hover:text-[#25D366] sm:size-auto sm:border-0 sm:gap-2 sm:text-[15px] sm:font-semibold"
+              className="flex size-10 items-center justify-center rounded-sm border border-white/20 text-white transition-colors hover:border-[#25D366] hover:text-[#25D366] sm:size-auto sm:border-0 sm:gap-2 sm:text-[15px] sm:font-semibold"
             >
               <WhatsAppIcon className="size-[18px]" />
               <span className="hidden sm:inline">WhatsApp</span>
             </a>
             <a
               href={`tel:${site.phones.uk.tel}`}
-              className="group inline-flex h-10 items-center gap-2 rounded-full bg-white/10 px-4 text-[15px] font-semibold text-white transition-colors hover:bg-white/15"
+              className="group inline-flex h-10 items-center gap-2 rounded-sm bg-white/10 px-4 text-[15px] font-semibold text-white transition-colors hover:bg-white/15"
             >
               <Phone aria-hidden className="size-4 text-brand-light transition-transform duration-300 group-hover:-rotate-12" />
               {site.phones.uk.display}

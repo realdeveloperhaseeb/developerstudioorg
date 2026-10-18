@@ -126,7 +126,6 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <section className="relative overflow-clip bg-white">
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="dot-grid absolute inset-0" />
-          <div className="drift-a absolute top-[-15%] right-[-10%] h-[560px] w-[560px] rounded-full bg-brand/15 blur-[110px]" />
         </div>
         <div className="relative mx-auto max-w-[1200px] px-4 pt-8 pb-12 sm:px-6 sm:pt-10">
           <Breadcrumbs
@@ -139,16 +138,16 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           />
           <div className="mt-8 grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
             <div>
-              <span className="hero-in inline-flex rounded-full bg-brand/10 px-3 py-1 text-[13px] font-bold text-brand-dark [animation-delay:60ms]">
+              <span className="hero-in inline-flex rounded-sm bg-brand/10 px-3 py-1 text-[13px] font-bold text-brand-dark [animation-delay:60ms]">
                 {post.category}
               </span>
-              <h1 className="hero-in mt-5 text-[2.3rem] leading-[1.08] font-extrabold tracking-[-0.03em] text-ink [animation-delay:120ms] sm:text-5xl">
+              <h1 className="hero-in mt-5 text-[2.3rem] leading-[1.08] font-extrabold tracking-[-0.015em] text-ink [animation-delay:120ms] sm:text-5xl">
                 {post.title}
               </h1>
               <p className="hero-in mt-5 text-lg leading-relaxed text-zinc-600 [animation-delay:180ms]">{post.description}</p>
               <div className="hero-in mt-7 flex flex-wrap items-center gap-x-6 gap-y-4 [animation-delay:240ms]">
                 <div className="flex items-center gap-3">
-                  <Image src={post.author.photo} alt={post.author.name} width={56} height={56} className="size-12 rounded-full object-cover object-top ring-2 ring-brand" />
+                  <Image src={post.author.photo} alt={post.author.name} width={56} height={56} className="size-12 rounded-sm object-cover object-top ring-2 ring-brand" />
                   <div className="text-[14px] leading-tight">
                     <p className="font-bold text-ink">{post.author.name}</p>
                     <p className="text-zinc-500">{post.author.role}</p>
@@ -222,7 +221,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                         <p className="mt-2 text-[16px] text-white/85">Get a free review of your website and Google visibility, with a custom offer.</p>
                         <Link
                           href="/free-growth-plan/"
-                          className="btn-shine group mt-5 inline-flex h-12 items-center gap-2 rounded-full bg-black px-6 text-[15px] font-bold text-white"
+                          className="btn-shine group mt-5 inline-flex h-12 items-center gap-2 rounded-sm bg-black px-6 text-[15px] font-bold text-white"
                         >
                           Get your free growth plan
                           <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -239,7 +238,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               <p className="text-lg font-bold text-ink">Ready to take the next step?</p>
               <Link
                 href={post.service.href}
-                className="btn-shine group inline-flex h-12 shrink-0 items-center gap-2 rounded-full bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
+                className="btn-shine group inline-flex h-12 shrink-0 items-center gap-2 rounded-sm bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
               >
                 {post.service.label}
                 <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -276,7 +275,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               <li key={r.slug} className="reveal-up" style={{ "--d": `${0.08 + i * 0.1}s` } as CSSProperties}>
                 <Link
                   href={`/blog/${r.slug}/`}
-                  className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-brand transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgb(4_120_87/0.45)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-brand transition duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857]"
                 >
                   <PostCover post={r} className="aspect-[16/9]" />
                   <span className="p-6">

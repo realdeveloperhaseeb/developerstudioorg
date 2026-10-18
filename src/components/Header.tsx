@@ -101,7 +101,7 @@ export function Header() {
           </a>
           <Link
             href="/free-growth-plan/"
-            className="btn-shine hidden h-11 items-center rounded-full bg-brand-dark px-5 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper sm:inline-flex"
+            className="btn-shine hidden h-11 items-center rounded-sm bg-brand-dark px-5 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper sm:inline-flex"
           >
             Free Growth Plan
           </Link>
@@ -144,7 +144,7 @@ export function Header() {
           </ul>
           <Link
             href="/free-growth-plan/"
-            className="mt-6 flex h-12 items-center justify-center rounded-full bg-brand-dark font-bold text-white"
+            className="mt-6 flex h-12 items-center justify-center rounded-sm bg-brand-dark font-bold text-white"
           >
             Get your free growth plan
           </Link>

@@ -25,7 +25,6 @@ export default function CaseStudiesPage() {
       <section className="relative overflow-clip bg-white">
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="dot-grid absolute inset-0" />
-          <div className="drift-a absolute top-[-15%] right-[-10%] h-[560px] w-[560px] rounded-full bg-brand/15 blur-[110px]" />
         </div>
         <div className="relative mx-auto max-w-[1200px] px-4 pt-8 pb-14 sm:px-6 sm:pt-10 sm:pb-20">
           <Breadcrumbs
@@ -37,7 +36,7 @@ export default function CaseStudiesPage() {
           />
           <div className="mt-10 grid items-end gap-10 lg:grid-cols-[1.25fr_0.75fr]">
             <div>
-              <h1 className="hero-in text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.035em] text-ink [animation-delay:80ms] sm:text-6xl">
+              <h1 className="hero-in text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.02em] text-ink [animation-delay:80ms] sm:text-6xl">
                 Real campaigns,{" "}
                 <span className="relative isolate whitespace-nowrap text-brand-dark">
                   <span aria-hidden className="marker absolute inset-x-0 bottom-[0.08em] -z-10 h-[0.3em] rounded-sm bg-brand/20" />
@@ -66,7 +65,7 @@ export default function CaseStudiesPage() {
             items={caseStudies.map((c) => ({
               platform: c.platform,
               node: (
-                <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-brand transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgb(4_120_87/0.45)] hover:ring-2">
+                <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-brand transition duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857] hover:ring-2">
                   <div className="p-4 pb-0">
                     <div className="sheen overflow-hidden rounded-xl ring-1 ring-zinc-200">
                       <Image
@@ -81,8 +80,8 @@ export default function CaseStudiesPage() {
                   </div>
                   <div className="flex flex-1 flex-col p-6 sm:p-8">
                     <div className="flex items-center justify-between gap-3">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-mist px-2.5 py-1 text-[12px] font-semibold text-zinc-700">
-                        <span className={`size-1.5 rounded-full ${c.platform === "Google Ads" ? "bg-[#fbbc04]" : "bg-[#0866ff]"}`} />
+                      <span className="inline-flex items-center gap-1.5 rounded-sm bg-mist px-2.5 py-1 text-[12px] font-semibold text-zinc-700">
+                        <span className={`size-1.5 rounded-sm ${c.platform === "Google Ads" ? "bg-[#fbbc04]" : "bg-[#0866ff]"}`} />
                         {c.platform}
                       </span>
                       <span className="text-[12px] text-zinc-500">{c.period}</span>

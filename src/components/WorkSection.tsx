@@ -16,7 +16,6 @@ export function WorkSection() {
 
   return (
     <section className="relative overflow-hidden bg-black py-20 text-white sm:py-28">
-      <div aria-hidden className="drift-a pointer-events-none absolute right-[-10%] bottom-[10%] h-[520px] w-[520px] rounded-full bg-brand/20 blur-[130px]" />
 
       <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6">
         <InView className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -25,7 +24,7 @@ export function WorkSection() {
               <span className="h-px w-6 bg-brand-light" />
               Websites we built
             </p>
-            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.03em] [--d:0.08s] sm:text-5xl">
+            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.015em] [--d:0.08s] sm:text-5xl">
               Live sites for real businesses
             </h2>
             <p className="reveal-up mt-5 text-lg leading-relaxed text-zinc-400 [--d:0.16s]">
@@ -35,7 +34,7 @@ export function WorkSection() {
           <div className="reveal-up [--d:0.2s]">
             <Link
               href="/work/"
-              className="group inline-flex h-12 items-center gap-2 rounded-full border border-white/20 px-6 text-[15px] font-bold text-white transition-colors hover:border-brand-light hover:text-brand-light"
+              className="group inline-flex h-12 items-center gap-2 rounded-sm border-2 border-white/80 px-6 text-[15px] font-bold text-white transition-colors hover:bg-white hover:text-ink"
             >
               See all work
               <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -63,7 +62,7 @@ export function WorkSection() {
                   setActive(next);
                   document.getElementById(`work-tab-${next}`)?.focus();
                 }}
-                className={`shrink-0 rounded-full px-5 py-2.5 text-[15px] font-bold whitespace-nowrap transition-all duration-300 ${
+                className={`shrink-0 rounded-sm px-5 py-2.5 text-[15px] font-bold whitespace-nowrap transition-all duration-300 ${
                   active === i ? "bg-brand-dark text-white shadow-[0_8px_24px_-8px_rgb(4_120_87/0.9)]" : "bg-white/[0.06] text-zinc-400 hover:bg-white/10 hover:text-white"
                 }`}
               >
@@ -83,16 +82,11 @@ export function WorkSection() {
             >
               {/* Device mockup */}
               <div className="reveal-up group relative pr-10 pb-10 sm:pr-16 sm:pb-12">
-                <div
-                  aria-hidden
-                  className="absolute inset-[10%] rounded-full opacity-40 blur-[90px] transition-opacity duration-700 group-hover:opacity-60"
-                  style={{ background: p.accent }}
-                />
                 <div className="relative overflow-hidden rounded-xl bg-zinc-900 shadow-[0_40px_90px_-30px_rgb(0_0_0/0.9)] ring-1 ring-white/10">
                   <div className="flex items-center gap-2 border-b border-white/10 px-3.5 py-2.5">
-                    <span className="size-2.5 rounded-full bg-[#ff5f57]" />
-                    <span className="size-2.5 rounded-full bg-[#febc2e]" />
-                    <span className="size-2.5 rounded-full bg-[#28c840]" />
+                    <span className="size-2.5 rounded-sm bg-[#ff5f57]" />
+                    <span className="size-2.5 rounded-sm bg-[#febc2e]" />
+                    <span className="size-2.5 rounded-sm bg-[#28c840]" />
                     <span className="ml-3 truncate rounded-md bg-white/[0.06] px-3 py-1 text-[11px] text-zinc-400">
                       {p.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
                     </span>
@@ -107,8 +101,8 @@ export function WorkSection() {
                     />
                   </div>
                 </div>
-                <div className="absolute right-0 bottom-0 w-[24%] min-w-[92px] rounded-[1.6rem] border-[5px] border-zinc-800 bg-zinc-800 shadow-[0_30px_60px_-20px_rgb(0_0_0/0.9)] transition-transform duration-700 group-hover:-translate-y-2">
-                  <div className="relative aspect-[9/19.5] overflow-hidden rounded-[1.2rem] bg-white">
+                <div className="absolute right-0 bottom-0 w-[24%] min-w-[92px] rounded-[14px] border-[5px] border-zinc-800 bg-zinc-800 shadow-[0_30px_60px_-20px_rgb(0_0_0/0.9)] transition-transform duration-700 group-hover:-translate-y-2">
+                  <div className="relative aspect-[9/19.5] overflow-hidden rounded-[10px] bg-white">
                     <Image
                       src={p.mobile}
                       alt={`Website design for ${p.client} built by DeveloperStudio, mobile view`}
@@ -116,7 +110,7 @@ export function WorkSection() {
                       sizes="160px"
                       className="object-cover object-top"
                     />
-                    <span aria-hidden className="absolute top-1.5 left-1/2 h-3.5 w-12 -translate-x-1/2 rounded-full bg-black" />
+                    <span aria-hidden className="absolute top-1.5 left-1/2 h-3.5 w-12 -translate-x-1/2 rounded-sm bg-black" />
                   </div>
                 </div>
               </div>
@@ -131,7 +125,7 @@ export function WorkSection() {
                 <ul className="mt-6 grid gap-2.5">
                   {p.built.slice(0, 4).map((b, j) => (
                     <li key={b} className="svc-item flex items-start gap-3 text-[15px] text-zinc-300" style={{ animationDelay: `${0.1 + j * 0.07}s` }}>
-                      <span className="mt-0.5 inline-flex size-[18px] shrink-0 items-center justify-center rounded-full bg-brand-dark text-white">
+                      <span className="mt-0.5 inline-flex size-[18px] shrink-0 items-center justify-center rounded-sm bg-brand-dark text-white">
                         <Check aria-hidden className="size-3" strokeWidth={3.5} />
                       </span>
                       {b}
@@ -140,7 +134,7 @@ export function WorkSection() {
                 </ul>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {p.services.map((s) => (
-                    <span key={s} className="rounded-full border border-white/15 px-3 py-1 text-[13px] font-medium text-zinc-300">
+                    <span key={s} className="rounded-sm border border-white/15 px-3 py-1 text-[13px] font-medium text-zinc-300">
                       {s}
                     </span>
                   ))}
@@ -149,7 +143,7 @@ export function WorkSection() {
                   href={p.url}
                   target="_blank"
                   rel="noopener"
-                  className="btn-shine group/live mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
+                  className="btn-shine group/live mt-8 inline-flex h-12 items-center gap-2 rounded-sm bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
                 >
                   Visit the live site
                   <ArrowUpRight aria-hidden className="size-4 transition-transform duration-300 group-hover/live:translate-x-0.5 group-hover/live:-translate-y-0.5" />
@@ -183,7 +177,7 @@ export function WorkSection() {
                   </div>
                   <figcaption className="mt-4 flex items-center justify-between gap-3">
                     <span className="text-lg font-bold">{w.title}</span>
-                    <span className="shrink-0 rounded-full bg-white/[0.06] px-3 py-1 text-[12px] text-zinc-400">{w.tag}</span>
+                    <span className="shrink-0 rounded-sm bg-white/[0.06] px-3 py-1 text-[12px] text-zinc-400">{w.tag}</span>
                   </figcaption>
                 </figure>
               ))}

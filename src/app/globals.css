@@ -9,7 +9,17 @@
   --color-brand-light: #34d399;
   --color-ink: #0a0a0a;
   --color-mist: #f4f4f5;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  /* Sharp, consistent corners: every card, button, badge and input uses 4px. */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-xl: 4px;
+  --radius-2xl: 4px;
+  --radius-3xl: 4px;
+  --radius-4xl: 4px;
 }
 
 body {
@@ -87,10 +97,14 @@ body {
 .drift-a { animation: drift-a 18s ease-in-out infinite; }
 .drift-b { animation: drift-b 22s ease-in-out infinite; }
 
+/* Graph-paper grid lines behind light page heroes, fading out towards the bottom. */
 .dot-grid {
-  background-image: radial-gradient(rgb(10 10 10 / 0.09) 1px, transparent 1px);
-  background-size: 22px 22px;
-  mask-image: radial-gradient(ellipse 70% 60% at 70% 40%, #000 20%, transparent 75%);
+  background-image:
+    linear-gradient(to right, rgb(10 10 10 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(10 10 10 / 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  background-position: -1px -1px;
+  mask-image: linear-gradient(to bottom, #000 35%, transparent 100%);
 }
 
 /* ---------- Proof cards ---------- */
@@ -110,15 +124,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-.sheen::after {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 40%;
-  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.65), transparent);
-  animation: sheen 4.5s 2.2s ease-in-out infinite;
-  pointer-events: none;
-}
+
 
 /* Notification slides in from the right with a soft pop. */
 @keyframes toast-in {
@@ -133,30 +139,39 @@ body {
 }
 .ping { animation: ping 1.6s cubic-bezier(0, 0, 0.2, 1) infinite; }
 
-/* ---------- Buttons ---------- */
-/* A light sweep runs across the button on hover. */
+/* ---------- Buttons ----------
+   Solid buttons lift slightly on hover; green buttons carry a soft green glow. */
 .btn-shine {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  box-shadow: 0 10px 22px -14px rgb(10 10 10 / 0.6);
 }
-.btn-shine::before {
+.btn-shine:hover { transform: translateY(-2px); }
+.btn-shine.bg-brand-dark { box-shadow: 0 10px 24px -10px rgb(4 120 87 / 0.65); }
+.btn-shine.bg-brand-dark:hover { box-shadow: 0 16px 30px -10px rgb(4 120 87 / 0.7); }
+.halo {}
+
+/* Corner brackets: a signature frame drawn around feature images and cards. */
+.brackets { position: relative; }
+.brackets::before,
+.brackets::after {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.28) 50%, transparent 70%);
-  transform: translateX(-110%);
-  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
 }
-.btn-shine:hover::before { transform: translateX(110%); }
+.brackets::before { top: -12px; left: -12px; border-top: 3px solid var(--color-ink); border-left: 3px solid var(--color-ink); }
+.brackets::after { right: -12px; bottom: -12px; border-right: 3px solid var(--color-brand-dark); border-bottom: 3px solid var(--color-brand-dark); }
 
-/* Soft pulsing halo that draws the eye to the main call to action. */
-@keyframes halo {
-  0% { box-shadow: 0 0 0 0 rgb(4 120 87 / 0.45); }
-  100% { box-shadow: 0 0 0 16px rgb(4 120 87 / 0); }
+/* Typing caret and scroll cue. */
+@keyframes caret-blink { 50% { opacity: 0; } }
+.type-caret { animation: caret-blink 1s step-end infinite; }
+@keyframes scroll-dot {
+  0% { transform: translate(-50%, 0); opacity: 1; }
+  70% { transform: translate(-50%, 12px); opacity: 0; }
+  100% { transform: translate(-50%, 0); opacity: 0; }
 }
-.halo { animation: halo 2.6s 2s ease-out infinite; }
+.scroll-dot { animation: scroll-dot 1.8s ease-in-out infinite; }
 
 /* ---------- Header links ---------- */
 .nav-link {
@@ -211,9 +226,10 @@ body {
 .js [data-inview="false"] .anim { animation-play-state: paused; }
 
 .dot-grid-soft {
-  background-image: radial-gradient(rgb(10 10 10 / 0.08) 1px, transparent 1px);
-  background-size: 16px 16px;
-  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 30%, transparent 80%);
+  background-image:
+    linear-gradient(to right, rgb(10 10 10 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(10 10 10 / 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 /* Problem 1: speed gauge. Resting styles are the finished state. */
@@ -360,10 +376,10 @@ html { scroll-behavior: smooth; }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-in, .word-mask > span, .marker, .count, .drift-a, .drift-b, .float-slow, .float-slower,
-  .sheen::after, .toast-in, .ping, .halo, .marquee, .travel-line, .anim, .svc-panel, .svc-item, .scroll-shot, .net-pulse, .cta-ring, .success-pop, .lightbox[open], .price-pop {
+  .sheen::after, .toast-in, .ping, .halo, .marquee, .travel-line, .anim, .svc-panel, .svc-item, .scroll-shot, .net-pulse, .cta-ring, .success-pop, .lightbox[open], .price-pop, .type-caret, .scroll-dot {
     animation: none !important;
   }
-  .btn-shine::before, .sheen::after { display: none; }
+  .btn-shine:hover { transform: none; }
   .reveal-up { transition: none; }
   .js [data-inview="false"] .reveal-up { opacity: 1; transform: none; }
   .cmp-row, .cmp-check, .col-sweep { transition: none; }

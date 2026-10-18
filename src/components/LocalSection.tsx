@@ -58,7 +58,7 @@ function AreaNetwork() {
       ))}
 
       <g className="net-node" style={{ "--d": "1.35s", transformOrigin: "418px 318px" } as CSSProperties}>
-        <rect x="362" y="300" width="112" height="36" rx="18" fill="#0a0a0a" />
+        <rect x="362" y="300" width="112" height="36" rx="4" fill="#0a0a0a" />
         <text x="418" y="323" textAnchor="middle" className="fill-white text-[13px] font-semibold">
           Across the UK
         </text>
@@ -89,7 +89,7 @@ export function LocalSection() {
             <span className="h-px w-6 bg-brand-dark" />
             Rotherham and the UK
           </p>
-          <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-5xl">
+          <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-5xl">
             An online agency that knows South Yorkshire
           </h2>
 
@@ -110,7 +110,7 @@ export function LocalSection() {
 
           <ul className="reveal-up mt-8 flex flex-wrap gap-2 [--d:0.24s]" aria-label="Areas we serve">
             {site.serviceAreas.map((a) => (
-              <li key={a} className="rounded-full bg-mist px-4 py-1.5 text-[14px] font-semibold text-ink ring-1 ring-brand/30">
+              <li key={a} className="rounded-sm bg-mist px-4 py-1.5 text-[14px] font-semibold text-ink ring-1 ring-brand/30">
                 {a}
               </li>
             ))}
@@ -122,7 +122,7 @@ export function LocalSection() {
                 <a
                   href={c.href}
                   {...(c.external ? { target: "_blank", rel: "noopener" } : {})}
-                  className="group flex h-full items-center gap-4 rounded-2xl p-4 ring-1 ring-brand transition duration-300 hover:-translate-y-0.5 hover:bg-brand/[0.04] hover:shadow-[0_16px_40px_-20px_rgb(4_120_87/0.5)]"
+                  className="group flex h-full items-center gap-4 rounded-2xl p-4 ring-1 ring-brand transition duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:bg-brand/[0.04] hover:shadow-[5px_5px_0_0_#047857]"
                 >
                   <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white transition-transform duration-300 group-hover:-rotate-6">
                     <c.icon aria-hidden className="size-5" />

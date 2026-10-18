@@ -17,7 +17,6 @@ export function ServicesSection() {
 
   return (
     <section className="relative overflow-clip bg-black py-20 text-white sm:py-28">
-      <div aria-hidden className="drift-a pointer-events-none absolute top-[-20%] left-[-10%] h-[520px] w-[520px] rounded-full bg-brand/20 blur-[130px]" />
 
       <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6">
         <InView className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -26,7 +25,7 @@ export function ServicesSection() {
               <span className="h-px w-6 bg-brand-light" />
               What we do
             </p>
-            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.03em] [--d:0.08s] sm:text-5xl">
+            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.015em] [--d:0.08s] sm:text-5xl">
               Web design, SEO and ads for Rotherham businesses
             </h2>
             <p className="reveal-up mt-5 text-lg leading-relaxed text-zinc-400 [--d:0.16s]">
@@ -36,7 +35,7 @@ export function ServicesSection() {
           <div className="reveal-up [--d:0.2s]">
             <Link
               href="/services/"
-              className="group inline-flex h-12 items-center gap-2 rounded-full border border-white/20 px-6 text-[15px] font-bold text-white transition-colors hover:border-brand-light hover:text-brand-light"
+              className="group inline-flex h-12 items-center gap-2 rounded-sm border-2 border-white/80 px-6 text-[15px] font-bold text-white transition-colors hover:bg-white hover:text-ink"
             >
               All services
               <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -111,7 +110,7 @@ function ServiceButton({
       {/* Green bar grows on the active item. */}
       <span
         aria-hidden
-        className={`absolute top-3 bottom-3 left-0 w-[3px] origin-center rounded-full bg-brand-light transition-transform duration-500 ${on ? "scale-y-100" : "scale-y-0"}`}
+        className={`absolute top-3 bottom-3 left-0 w-[3px] origin-center rounded-sm bg-brand-light transition-transform duration-500 ${on ? "scale-y-100" : "scale-y-0"}`}
       />
       <span className="text-[13px] font-semibold text-zinc-500 tabular-nums">0{index + 1}</span>
       <span
@@ -158,9 +157,9 @@ function ServicePanel({ index }: { index: number }) {
         {v.frame === "browser" ? (
           <div className="relative overflow-hidden rounded-xl bg-white shadow-[0_20px_50px_-20px_rgb(10_10_10/0.35)] ring-1 ring-zinc-200">
             <div className="flex items-center gap-1.5 border-b border-zinc-200 px-3 py-2">
-              <span className="size-2 rounded-full bg-zinc-300" />
-              <span className="size-2 rounded-full bg-zinc-300" />
-              <span className="size-2 rounded-full bg-zinc-300" />
+              <span className="size-2 rounded-sm bg-zinc-300" />
+              <span className="size-2 rounded-sm bg-zinc-300" />
+              <span className="size-2 rounded-sm bg-zinc-300" />
             </div>
             {/* The full-page screenshot slowly scrolls inside the window. */}
             <div className="relative aspect-[16/8] overflow-hidden">
@@ -181,7 +180,7 @@ function ServicePanel({ index }: { index: number }) {
         <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
           {s.included.slice(0, 4).map((item, j) => (
             <li key={item} className="svc-item flex items-start gap-2.5 text-[15px] text-zinc-700" style={{ animationDelay: `${0.1 + j * 0.07}s` }}>
-              <span className="mt-0.5 inline-flex size-[18px] shrink-0 items-center justify-center rounded-full bg-brand-dark text-white">
+              <span className="mt-0.5 inline-flex size-[18px] shrink-0 items-center justify-center rounded-sm bg-brand-dark text-white">
                 <Check aria-hidden className="size-3" strokeWidth={3.5} />
               </span>
               {item}
@@ -191,7 +190,7 @@ function ServicePanel({ index }: { index: number }) {
         <div className="mt-auto pt-7">
           <Link
             href={`/services/${s.slug}/`}
-            className="btn-shine group inline-flex h-12 items-center gap-2 rounded-full bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
+            className="btn-shine group inline-flex h-12 items-center gap-2 rounded-sm bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
           >
             Explore {s.short}
             <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />

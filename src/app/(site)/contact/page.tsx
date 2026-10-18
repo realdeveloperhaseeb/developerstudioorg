@@ -100,7 +100,6 @@ export default function ContactPage() {
       <section className="relative overflow-clip bg-white">
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="dot-grid absolute inset-0" />
-          <div className="drift-a absolute top-[-15%] right-[-10%] h-[560px] w-[560px] rounded-full bg-brand/15 blur-[110px]" />
         </div>
         <div className="relative mx-auto grid max-w-[1200px] items-start gap-12 px-4 pt-8 pb-16 sm:px-6 sm:pt-10 lg:grid-cols-[1fr_1fr] lg:gap-14 lg:pb-24">
           <div>
@@ -111,7 +110,7 @@ export default function ContactPage() {
                 { name: "Contact", href: "/contact/" },
               ]}
             />
-            <h1 className="hero-in mt-8 text-[2.5rem] leading-[1.04] font-extrabold tracking-[-0.035em] text-ink [animation-delay:80ms] sm:text-6xl">
+            <h1 className="hero-in mt-8 text-[2.5rem] leading-[1.04] font-extrabold tracking-[-0.02em] text-ink [animation-delay:80ms] sm:text-6xl">
               Contact DeveloperStudio, digital agency in{" "}
               <span className="relative isolate whitespace-nowrap text-brand-dark">
                 <span aria-hidden className="marker absolute inset-x-0 bottom-[0.08em] -z-10 h-[0.3em] rounded-sm bg-brand/20" />
@@ -128,7 +127,7 @@ export default function ContactPage() {
                   <a
                     href={r.href}
                     {...(r.external ? { target: "_blank", rel: "noopener" } : {})}
-                    className="group flex h-full items-start gap-4 rounded-2xl bg-white/80 p-4 ring-1 ring-brand backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-brand/[0.04] hover:shadow-[0_16px_40px_-20px_rgb(4_120_87/0.5)]"
+                    className="group flex h-full items-start gap-4 rounded-2xl bg-white/80 p-4 ring-1 ring-brand backdrop-blur transition duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:bg-brand/[0.04] hover:shadow-[5px_5px_0_0_#047857]"
                   >
                     <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white transition-transform duration-300 group-hover:-rotate-6">
                       <r.icon aria-hidden className="size-5" />
@@ -175,14 +174,14 @@ export default function ContactPage() {
               <span className="h-px w-6 bg-brand-dark" />
               What happens next
             </p>
-            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-4xl">
+            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-4xl">
               From your message to a fixed quote
             </h2>
           </InView>
           <InView as="ol" className="mt-10 grid gap-5 md:grid-cols-3" threshold={0.2}>
             {next.map((n, i) => (
               <li key={n.title} className="reveal-up" style={{ "--d": `${0.1 + i * 0.12}s` } as CSSProperties}>
-                <div className="group h-full rounded-3xl bg-white p-7 ring-1 ring-brand transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgb(4_120_87/0.45)]">
+                <div className="group h-full rounded-3xl bg-white p-7 ring-1 ring-brand transition duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857]">
                   <div className="flex items-center justify-between">
                     <span className="flex size-12 items-center justify-center rounded-2xl bg-brand-dark text-white transition-transform duration-300 group-hover:-rotate-6">
                       <n.icon aria-hidden className="size-6" />
@@ -203,7 +202,7 @@ export default function ContactPage() {
               </p>
               <ul className="flex flex-wrap gap-2">
                 {site.serviceAreas.map((a) => (
-                  <li key={a} className="rounded-full bg-mist px-3.5 py-1.5 text-[13px] font-semibold text-ink ring-1 ring-brand/30">
+                  <li key={a} className="rounded-sm bg-mist px-3.5 py-1.5 text-[13px] font-semibold text-ink ring-1 ring-brand/30">
                     {a}
                   </li>
                 ))}

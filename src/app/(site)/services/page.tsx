@@ -32,7 +32,6 @@ export default function ServicesPage() {
       <section className="relative overflow-clip bg-white">
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="dot-grid absolute inset-0" />
-          <div className="drift-a absolute top-[-15%] right-[-10%] h-[560px] w-[560px] rounded-full bg-brand/15 blur-[110px]" />
         </div>
         <div className="relative mx-auto max-w-[1200px] px-4 pt-8 pb-14 sm:px-6 sm:pt-10 sm:pb-20">
           <Breadcrumbs
@@ -44,7 +43,7 @@ export default function ServicesPage() {
           />
           <div className="mt-10 grid items-end gap-10 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <h1 className="hero-in text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.035em] text-ink [animation-delay:80ms] sm:text-6xl">
+              <h1 className="hero-in text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.02em] text-ink [animation-delay:80ms] sm:text-6xl">
                 Web design, SEO and ads for{" "}
                 <span className="relative isolate whitespace-nowrap text-brand-dark">
                   <span aria-hidden className="marker absolute inset-x-0 bottom-[0.08em] -z-10 h-[0.3em] rounded-sm bg-brand/20" />
@@ -74,7 +73,7 @@ export default function ServicesPage() {
                 <a
                   key={s.slug}
                   href={`#${s.slug}`}
-                  className="group inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[14px] font-semibold text-ink ring-1 ring-brand transition-colors hover:bg-brand-dark hover:text-white"
+                  className="group inline-flex items-center gap-2 rounded-sm bg-white px-4 py-2 text-[14px] font-semibold text-ink ring-1 ring-brand transition-colors hover:bg-brand-dark hover:text-white"
                 >
                   <Icon aria-hidden className="size-4 text-brand-dark transition-colors group-hover:text-white" />
                   {s.name}
@@ -96,7 +95,7 @@ export default function ServicesPage() {
               <InView key={s.slug} threshold={0.2}>
                 <article
                   id={s.slug}
-                  className="reveal-up group grid scroll-mt-28 items-center gap-8 overflow-hidden rounded-3xl bg-white p-6 ring-1 ring-brand transition-shadow duration-500 hover:shadow-[0_30px_70px_-35px_rgb(4_120_87/0.5)] sm:p-10 lg:grid-cols-2 lg:gap-12"
+                  className="reveal-up group grid scroll-mt-28 items-center gap-8 overflow-hidden rounded-3xl bg-white p-6 ring-1 ring-brand transition-shadow duration-500 hover:shadow-[5px_5px_0_0_#047857] sm:p-10 lg:grid-cols-2 lg:gap-12"
                 >
                   <div className={flip ? "lg:order-2" : ""}>
                     <div className="flex items-center gap-3">
@@ -110,7 +109,7 @@ export default function ServicesPage() {
                     <ul className="mt-6 grid gap-2.5">
                       {s.included.slice(0, 4).map((item) => (
                         <li key={item} className="flex items-start gap-2.5 text-[15px] text-zinc-700">
-                          <span className="mt-0.5 inline-flex size-[18px] shrink-0 items-center justify-center rounded-full bg-brand-dark text-white">
+                          <span className="mt-0.5 inline-flex size-[18px] shrink-0 items-center justify-center rounded-sm bg-brand-dark text-white">
                             <Check aria-hidden className="size-3" strokeWidth={3.5} />
                           </span>
                           {item}
@@ -119,7 +118,7 @@ export default function ServicesPage() {
                     </ul>
                     <Link
                       href={`/services/${s.slug}/`}
-                      className="btn-shine group/btn mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
+                      className="btn-shine group/btn mt-8 inline-flex h-12 items-center gap-2 rounded-sm bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
                     >
                       Explore {s.name}
                       <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -131,9 +130,9 @@ export default function ServicesPage() {
                     {v.frame === "browser" ? (
                       <div className="relative overflow-hidden rounded-xl bg-white shadow-[0_20px_50px_-20px_rgb(10_10_10/0.35)] ring-1 ring-zinc-200">
                         <div className="flex items-center gap-1.5 border-b border-zinc-200 px-3 py-2">
-                          <span className="size-2 rounded-full bg-zinc-300" />
-                          <span className="size-2 rounded-full bg-zinc-300" />
-                          <span className="size-2 rounded-full bg-zinc-300" />
+                          <span className="size-2 rounded-sm bg-zinc-300" />
+                          <span className="size-2 rounded-sm bg-zinc-300" />
+                          <span className="size-2 rounded-sm bg-zinc-300" />
                         </div>
                         <div className="relative aspect-[16/10] overflow-hidden">
                           <Image src={v.src} alt={v.alt} fill sizes="(min-width: 1024px) 520px, 90vw" className="scroll-shot object-cover object-top" />
@@ -161,7 +160,7 @@ export default function ServicesPage() {
               <span className="h-px w-6 bg-brand-dark" />
               Where to start
             </p>
-            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-4xl">
+            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-4xl">
               Start where you get the fastest return
             </h2>
             <p className="reveal-up mt-4 text-lg leading-relaxed text-zinc-600 [--d:0.16s]">
@@ -172,7 +171,7 @@ export default function ServicesPage() {
           <InView as="ol" className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" threshold={0.2}>
             {order.map((o, i) => (
               <li key={o.title} className="reveal-up" style={{ "--d": `${0.1 + i * 0.1}s` } as CSSProperties}>
-                <div className="h-full rounded-3xl p-7 ring-1 ring-brand transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgb(4_120_87/0.45)]">
+                <div className="h-full rounded-3xl p-7 ring-1 ring-brand transition duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857]">
                   <span className="text-5xl font-extrabold tracking-tight text-brand/25">0{i + 1}</span>
                   <h3 className="mt-2 text-xl font-extrabold tracking-tight text-ink">{o.title}</h3>
                   <p className="mt-2 text-[15px] leading-relaxed text-zinc-600">{o.body}</p>

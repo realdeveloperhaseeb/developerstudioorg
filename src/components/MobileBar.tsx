@@ -10,7 +10,7 @@ export function MobileBar() {
       <div className="grid grid-cols-[1fr_1fr_1.3fr] gap-2">
         <a
           href={`tel:${site.phones.uk.tel}`}
-          className="flex h-12 items-center justify-center gap-2 rounded-full border border-white/20 text-[15px] font-semibold text-white"
+          className="flex h-12 items-center justify-center gap-2 rounded-sm border-2 border-white/80 text-[15px] font-semibold text-white"
         >
           <Phone aria-hidden className="size-4" />
           Call
@@ -19,12 +19,12 @@ export function MobileBar() {
           href={site.whatsapp}
           target="_blank"
           rel="noopener"
-          className="flex h-12 items-center justify-center gap-2 rounded-full border border-white/20 text-[15px] font-semibold text-white"
+          className="flex h-12 items-center justify-center gap-2 rounded-sm border-2 border-white/80 text-[15px] font-semibold text-white"
         >
           <WhatsAppIcon className="size-[18px]" />
           WhatsApp
         </a>
-        <Link href="/free-growth-plan/" className="flex h-12 items-center justify-center rounded-full bg-brand-dark text-[15px] font-bold text-white">
+        <Link href="/free-growth-plan/" className="flex h-12 items-center justify-center rounded-sm bg-brand-dark text-[15px] font-bold text-white">
           Free Plan
         </Link>
       </div>

@@ -32,14 +32,14 @@ export function TeamSection({
               <span className="h-px w-6 bg-brand-dark" />
               {eyebrow}
             </p>
-            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-5xl">{title}</h2>
+            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-5xl">{title}</h2>
             <p className="reveal-up mt-5 text-lg leading-relaxed text-zinc-600 [--d:0.16s]">{intro}</p>
           </div>
           {showLink && (
             <div className="reveal-up [--d:0.2s]">
               <Link
                 href="/team/"
-                className="group inline-flex h-12 items-center gap-2 rounded-full border border-zinc-300 bg-white px-6 text-[15px] font-bold text-ink transition-colors hover:border-brand-dark hover:text-brand-dark"
+                className="group inline-flex h-12 items-center gap-2 rounded-sm border-2 border-ink bg-white px-6 text-[15px] font-bold text-ink transition-colors hover:bg-ink hover:text-white"
               >
                 Meet the whole team
                 <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -53,7 +53,7 @@ export function TeamSection({
             <li key={m.name} className="reveal-up" style={{ "--d": `${0.1 + i * 0.1}s` } as CSSProperties}>
               <Tilt max={9}>
                 <article className="group">
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-zinc-200 ring-1 ring-brand transition-shadow duration-500 group-hover:shadow-[0_30px_60px_-25px_rgb(4_120_87/0.6)] group-hover:ring-2">
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-zinc-200 ring-1 ring-brand transition-shadow duration-500 group-hover:shadow-[5px_5px_0_0_#047857] group-hover:ring-2">
                     <Image
                       src={m.photo ?? "/images/team/abdullah-designer.svg"}
                       unoptimized={!m.photo}

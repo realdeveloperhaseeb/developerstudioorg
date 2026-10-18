@@ -47,7 +47,6 @@ const rows = [
 export function WhyUsSection() {
   return (
     <section className="relative overflow-clip bg-black py-20 text-white sm:py-28">
-      <div aria-hidden className="drift-b pointer-events-none absolute top-[10%] right-[-10%] h-[520px] w-[520px] rounded-full bg-brand/20 blur-[130px]" />
 
       <div className="relative mx-auto grid max-w-[1200px] gap-12 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         {/* Intro, sticky beside the comparison on desktop */}
@@ -56,7 +55,7 @@ export function WhyUsSection() {
             <span className="h-px w-6 bg-brand-light" />
             Why DeveloperStudio
           </p>
-          <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.03em] [--d:0.08s] sm:text-5xl">
+          <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.015em] [--d:0.08s] sm:text-5xl">
             An agency you can actually check
           </h2>
           <p className="reveal-up mt-5 text-lg leading-relaxed text-zinc-400 [--d:0.16s]">
@@ -73,7 +72,7 @@ export function WhyUsSection() {
           <div className="reveal-up mt-8 [--d:0.3s]">
             <Link
               href="/free-growth-plan/"
-              className="btn-shine group inline-flex h-12 items-center gap-2 rounded-full bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
+              className="btn-shine group inline-flex h-12 items-center gap-2 rounded-sm bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
             >
               Get your free growth plan
               <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -106,7 +105,7 @@ export function WhyUsSection() {
                     {r.topic}
                   </p>
                   <div className="flex items-start gap-3 px-6 pt-3 pb-2 md:pb-5">
-                    <span className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-white/[0.06] text-zinc-500">
+                    <span className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-sm bg-white/[0.06] text-zinc-500">
                       <X aria-hidden className="size-3.5" strokeWidth={3} />
                     </span>
                     <span className="text-[15px] leading-relaxed text-zinc-500 line-through decoration-zinc-600/70">
@@ -115,7 +114,7 @@ export function WhyUsSection() {
                     </span>
                   </div>
                   <div className="flex items-start gap-3 px-6 pt-2 pb-5 md:pt-3">
-                    <span className="cmp-check mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-dark text-white shadow-[0_0_0_4px_rgb(4_120_87/0.2)]">
+                    <span className="cmp-check mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-sm bg-brand-dark text-white shadow-[0_0_0_4px_rgb(4_120_87/0.2)]">
                       <Check aria-hidden className="size-3.5" strokeWidth={3.5} />
                     </span>
                     <span className="text-[15px] leading-relaxed font-semibold text-white">

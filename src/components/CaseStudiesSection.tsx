@@ -43,11 +43,11 @@ function PlatformBadge({ platform, dark }: { platform: CaseStudy["platform"]; da
   const dot = platform === "Google Ads" ? "bg-[#fbbc04]" : "bg-[#0866ff]";
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[12px] font-semibold ${
+      className={`inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1 text-[12px] font-semibold ${
         dark ? "bg-white/10 text-zinc-200" : "bg-mist text-zinc-700"
       }`}
     >
-      <span className={`size-1.5 rounded-full ${dot}`} />
+      <span className={`size-1.5 rounded-sm ${dot}`} />
       {platform}
     </span>
   );
@@ -63,7 +63,7 @@ export function CaseStudiesSection() {
               <span className="h-px w-6 bg-brand-dark" />
               Case studies
             </p>
-            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-5xl">
+            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-5xl">
               Real campaigns, real numbers
             </h2>
             <p className="reveal-up mt-5 text-lg leading-relaxed text-zinc-600 [--d:0.16s]">
@@ -73,7 +73,7 @@ export function CaseStudiesSection() {
           <div className="reveal-up [--d:0.2s]">
             <Link
               href="/case-studies/"
-              className="group inline-flex h-12 items-center gap-2 rounded-full border border-zinc-300 px-6 text-[15px] font-bold text-ink transition-colors hover:border-brand-dark hover:text-brand-dark"
+              className="group inline-flex h-12 items-center gap-2 rounded-sm border-2 border-ink px-6 text-[15px] font-bold text-ink transition-colors hover:bg-ink hover:text-white"
             >
               All case studies
               <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -84,12 +84,11 @@ export function CaseStudiesSection() {
         {/* Featured: Roadside Hero */}
         <InView className="mt-14" threshold={0.2}>
           <article className="reveal-up group relative grid overflow-hidden rounded-3xl bg-ink text-white lg:grid-cols-[1fr_1.1fr]">
-            <div aria-hidden className="drift-b pointer-events-none absolute -bottom-40 -left-20 h-[420px] w-[420px] rounded-full bg-brand/25 blur-[110px]" />
 
             <div className="relative p-7 sm:p-10">
               <div className="flex flex-wrap items-center gap-2">
                 <PlatformBadge platform={roadside.platform} dark />
-                <span className="rounded-full bg-brand-dark px-2.5 py-1 text-[12px] font-semibold text-white">Featured</span>
+                <span className="rounded-sm bg-brand-dark px-2.5 py-1 text-[12px] font-semibold text-white">Featured</span>
               </div>
               <p className="mt-6 text-[14px] text-zinc-400">
                 {roadside.client} · {roadside.sector}
@@ -121,7 +120,7 @@ export function CaseStudiesSection() {
               <ul className="mt-7 grid gap-3">
                 {roadside.strategy.map((s) => (
                   <li key={s} className="flex items-start gap-3 text-[15px] leading-relaxed text-zinc-300">
-                    <span className="mt-1 inline-flex size-[18px] shrink-0 items-center justify-center rounded-full bg-brand-dark text-white">
+                    <span className="mt-1 inline-flex size-[18px] shrink-0 items-center justify-center rounded-sm bg-brand-dark text-white">
                       <Check aria-hidden className="size-3" strokeWidth={3.5} />
                     </span>
                     {s}
@@ -131,7 +130,7 @@ export function CaseStudiesSection() {
 
               <Link
                 href={`/case-studies/${roadside.slug}/`}
-                className="btn-shine group/link mt-9 inline-flex h-12 items-center gap-2 rounded-full bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
+                className="btn-shine group/link mt-9 inline-flex h-12 items-center gap-2 rounded-sm bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
               >
                 Read the case study
                 <ArrowUpRight aria-hidden className="size-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
@@ -171,7 +170,7 @@ export function CaseStudiesSection() {
         <InView as="ul" className="mt-6 grid gap-6 md:grid-cols-3" threshold={0.15}>
           {cards.map(({ study, big, bigLabel, points, image, focus }, i) => (
             <li key={study.slug} className="reveal-up" style={{ "--d": `${0.1 + i * 0.12}s` } as CSSProperties}>
-              <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-brand transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgb(4_120_87/0.45)] hover:ring-2">
+              <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-brand transition duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857] hover:ring-2">
                 <div className="relative overflow-hidden bg-mist p-4">
                   <div className="overflow-hidden rounded-lg ring-1 ring-zinc-200">
                     <Image

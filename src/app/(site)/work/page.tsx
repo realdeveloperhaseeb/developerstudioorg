@@ -40,7 +40,6 @@ export default function WorkPage() {
       <section className="relative overflow-clip bg-white">
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="dot-grid absolute inset-0" />
-          <div className="drift-a absolute top-[-15%] right-[-10%] h-[560px] w-[560px] rounded-full bg-brand/15 blur-[110px]" />
         </div>
         <div className="relative mx-auto max-w-[1200px] px-4 pt-8 pb-14 sm:px-6 sm:pt-10 sm:pb-20">
           <Breadcrumbs
@@ -52,7 +51,7 @@ export default function WorkPage() {
           />
           <div className="mt-8 grid items-end gap-10 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <h1 className="hero-in text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.035em] text-ink [animation-delay:80ms] sm:text-6xl">
+              <h1 className="hero-in text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.02em] text-ink [animation-delay:80ms] sm:text-6xl">
                 Websites and campaigns{" "}
                 <span className="relative isolate whitespace-nowrap text-brand-dark">
                   <span aria-hidden className="marker absolute inset-x-0 bottom-[0.08em] -z-10 h-[0.3em] rounded-sm bg-brand/20" />
@@ -83,14 +82,13 @@ export default function WorkPage() {
 
       {/* Live sites, alternating rows with scroll-linked mockups */}
       <section className="relative overflow-clip bg-black py-20 text-white sm:py-28">
-        <div aria-hidden className="drift-b pointer-events-none absolute top-[20%] right-[-10%] h-[520px] w-[520px] rounded-full bg-brand/20 blur-[130px]" />
         <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6">
           <InView className="max-w-2xl">
             <p className="reveal-up inline-flex items-center gap-2 text-[13px] font-bold tracking-[0.16em] text-brand-light uppercase">
               <span className="h-px w-6 bg-brand-light" />
               Live websites
             </p>
-            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.03em] [--d:0.08s] sm:text-5xl">Built, launched and working</h2>
+            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.015em] [--d:0.08s] sm:text-5xl">Built, launched and working</h2>
           </InView>
 
           <div className="mt-16 grid gap-24 lg:gap-32">
@@ -101,12 +99,11 @@ export default function WorkPage() {
                   <article className={`grid items-center gap-10 lg:gap-16 ${flip ? "lg:grid-cols-[1fr_1.25fr]" : "lg:grid-cols-[1.25fr_1fr]"}`}>
                     {/* Mockup */}
                     <div className={`reveal-up group relative pr-10 pb-10 sm:pr-16 sm:pb-12 ${flip ? "lg:order-2" : ""}`}>
-                      <div aria-hidden className="absolute inset-[12%] rounded-full opacity-40 blur-[90px]" style={{ background: p.accent }} />
                       <div className="relative overflow-hidden rounded-xl bg-zinc-900 shadow-[0_40px_90px_-30px_rgb(0_0_0/0.9)] ring-1 ring-white/10">
                         <div className="flex items-center gap-2 border-b border-white/10 px-3.5 py-2.5">
-                          <span className="size-2.5 rounded-full bg-[#ff5f57]" />
-                          <span className="size-2.5 rounded-full bg-[#febc2e]" />
-                          <span className="size-2.5 rounded-full bg-[#28c840]" />
+                          <span className="size-2.5 rounded-sm bg-[#ff5f57]" />
+                          <span className="size-2.5 rounded-sm bg-[#febc2e]" />
+                          <span className="size-2.5 rounded-sm bg-[#28c840]" />
                           <span className="ml-3 truncate rounded-md bg-white/[0.06] px-3 py-1 text-[11px] text-zinc-400">
                             {p.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
                           </span>
@@ -117,8 +114,8 @@ export default function WorkPage() {
                           sizes="(min-width: 1024px) 640px, 90vw"
                         />
                       </div>
-                      <div className="absolute right-0 bottom-0 w-[24%] min-w-[90px] rounded-[1.6rem] border-[5px] border-zinc-800 bg-zinc-800 shadow-[0_30px_60px_-20px_rgb(0_0_0/0.9)] transition-transform duration-700 group-hover:-translate-y-2">
-                        <div className="relative aspect-[9/19.5] overflow-hidden rounded-[1.2rem] bg-white">
+                      <div className="absolute right-0 bottom-0 w-[24%] min-w-[90px] rounded-[14px] border-[5px] border-zinc-800 bg-zinc-800 shadow-[0_30px_60px_-20px_rgb(0_0_0/0.9)] transition-transform duration-700 group-hover:-translate-y-2">
+                        <div className="relative aspect-[9/19.5] overflow-hidden rounded-[10px] bg-white">
                           <Image
                             src={p.mobile}
                             alt={`Website design for ${p.client} built by DeveloperStudio, mobile view`}
@@ -126,7 +123,7 @@ export default function WorkPage() {
                             sizes="160px"
                             className="object-cover object-top"
                           />
-                          <span aria-hidden className="absolute top-1.5 left-1/2 h-3.5 w-12 -translate-x-1/2 rounded-full bg-black" />
+                          <span aria-hidden className="absolute top-1.5 left-1/2 h-3.5 w-12 -translate-x-1/2 rounded-sm bg-black" />
                         </div>
                       </div>
                     </div>
@@ -142,7 +139,7 @@ export default function WorkPage() {
                       <ul className="mt-6 grid gap-2.5">
                         {p.built.slice(0, 4).map((b) => (
                           <li key={b} className="flex items-start gap-3 text-[15px] text-zinc-300">
-                            <span className="mt-0.5 inline-flex size-[18px] shrink-0 items-center justify-center rounded-full bg-brand-dark text-white">
+                            <span className="mt-0.5 inline-flex size-[18px] shrink-0 items-center justify-center rounded-sm bg-brand-dark text-white">
                               <Check aria-hidden className="size-3" strokeWidth={3.5} />
                             </span>
                             {b}
@@ -151,7 +148,7 @@ export default function WorkPage() {
                       </ul>
                       <div className="mt-6 flex flex-wrap gap-2">
                         {p.services.map((s) => (
-                          <span key={s} className="rounded-full border border-white/15 px-3 py-1 text-[13px] font-medium text-zinc-300">
+                          <span key={s} className="rounded-sm border border-white/15 px-3 py-1 text-[13px] font-medium text-zinc-300">
                             {s}
                           </span>
                         ))}
@@ -160,7 +157,7 @@ export default function WorkPage() {
                         href={p.url}
                         target="_blank"
                         rel="noopener"
-                        className="btn-shine group/live mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
+                        className="btn-shine group/live mt-8 inline-flex h-12 items-center gap-2 rounded-sm bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
                       >
                         Visit the live site
                         <ArrowUpRight aria-hidden className="size-4 transition-transform duration-300 group-hover/live:translate-x-0.5 group-hover/live:-translate-y-0.5" />
@@ -182,7 +179,7 @@ export default function WorkPage() {
               <span className="h-px w-6 bg-brand-dark" />
               More projects
             </p>
-            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-5xl">Earlier websites we built</h2>
+            <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-5xl">Earlier websites we built</h2>
             <p className="reveal-up mt-5 text-lg leading-relaxed text-zinc-600 [--d:0.16s]">Click any project to see it full size.</p>
           </InView>
           <InView className="reveal-up mt-10" threshold={0.05}>
@@ -203,12 +200,12 @@ export default function WorkPage() {
                 <span className="h-px w-6 bg-brand-dark" />
                 Ad campaigns
               </p>
-              <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-5xl">Campaign results</h2>
+              <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-5xl">Campaign results</h2>
             </div>
             <div className="reveal-up [--d:0.16s]">
               <Link
                 href="/case-studies/"
-                className="group inline-flex h-12 items-center gap-2 rounded-full border border-zinc-300 px-6 text-[15px] font-bold text-ink transition-colors hover:border-brand-dark hover:text-brand-dark"
+                className="group inline-flex h-12 items-center gap-2 rounded-sm border-2 border-ink px-6 text-[15px] font-bold text-ink transition-colors hover:bg-ink hover:text-white"
               >
                 All case studies
                 <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -220,10 +217,10 @@ export default function WorkPage() {
               <li key={c.slug} className="reveal-up" style={{ "--d": `${0.08 + i * 0.08}s` } as CSSProperties}>
                 <Link
                   href={`/case-studies/${c.slug}/`}
-                  className="group flex h-full flex-col rounded-3xl p-6 ring-1 ring-brand transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-25px_rgb(4_120_87/0.5)]"
+                  className="group flex h-full flex-col rounded-3xl p-6 ring-1 ring-brand transition duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857]"
                 >
-                  <span className="inline-flex items-center gap-1.5 self-start rounded-full bg-mist px-2.5 py-1 text-[12px] font-semibold text-zinc-700">
-                    <span className={`size-1.5 rounded-full ${c.platform === "Google Ads" ? "bg-[#fbbc04]" : "bg-[#0866ff]"}`} />
+                  <span className="inline-flex items-center gap-1.5 self-start rounded-sm bg-mist px-2.5 py-1 text-[12px] font-semibold text-zinc-700">
+                    <span className={`size-1.5 rounded-sm ${c.platform === "Google Ads" ? "bg-[#fbbc04]" : "bg-[#0866ff]"}`} />
                     {c.platform}
                   </span>
                   <span className="mt-4 text-[14px] text-zinc-500">{c.client}</span>

@@ -15,7 +15,7 @@ export function BlogGrid({ items }: { items: { category: string; node: ReactNode
             type="button"
             aria-pressed={active === c}
             onClick={() => setActive(c)}
-            className={`shrink-0 rounded-full px-5 py-2.5 text-[15px] font-bold whitespace-nowrap transition-all duration-300 ${
+            className={`shrink-0 rounded-sm px-5 py-2.5 text-[15px] font-bold whitespace-nowrap transition-all duration-300 ${
               active === c ? "bg-brand-dark text-white shadow-[0_8px_24px_-8px_rgb(4_120_87/0.9)]" : "bg-white text-zinc-600 ring-1 ring-zinc-200 hover:text-ink hover:ring-brand"
             }`}
           >

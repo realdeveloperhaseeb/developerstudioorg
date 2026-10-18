@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { site } from "@/content/site";
 import { CookieConsent } from "@/components/CookieConsent";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-poppins", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -47,7 +47,7 @@ const orgSchema = {
 // header and footer through the (site) and (landing) route groups.
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" id="top" className={inter.variable} data-scroll-behavior="smooth" suppressHydrationWarning>
+    <html lang="en-GB" id="top" className={poppins.variable} data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         {/* Lets scroll-reveal styles apply only when JavaScript runs, so content is never hidden without it. */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />

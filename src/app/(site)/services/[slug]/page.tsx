@@ -86,7 +86,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <section className="relative overflow-clip bg-white">
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="dot-grid absolute inset-0" />
-          <div className="drift-a absolute top-[-15%] right-[-10%] h-[560px] w-[560px] rounded-full bg-brand/15 blur-[110px]" />
         </div>
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 px-4 pt-8 pb-16 sm:px-6 sm:pt-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:pb-24">
           <div>
@@ -98,13 +97,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 { name: s.name, href: `/services/${s.slug}/` },
               ]}
             />
-            <p className="hero-in mt-8 inline-flex items-center gap-2.5 rounded-full border border-zinc-200 bg-white/80 py-1.5 pr-3.5 pl-1.5 text-[13px] font-semibold text-zinc-700 backdrop-blur [animation-delay:60ms]">
-              <span className="flex size-6 items-center justify-center rounded-full bg-brand-dark text-white">
+            <p className="hero-in mt-8 inline-flex items-center gap-2.5 rounded-sm border border-zinc-200 bg-white/80 py-1.5 pr-3.5 pl-1.5 text-[13px] font-semibold text-zinc-700 backdrop-blur [animation-delay:60ms]">
+              <span className="flex size-6 items-center justify-center rounded-sm bg-brand-dark text-white">
                 <Icon aria-hidden className="size-3.5" />
               </span>
               {s.name}
             </p>
-            <h1 className="hero-in mt-5 text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.035em] text-ink [animation-delay:120ms] sm:text-6xl">
+            <h1 className="hero-in mt-5 text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.02em] text-ink [animation-delay:120ms] sm:text-6xl">
               {s.h1.replace(/ in Rotherham$/, "")} in{" "}
               <span className="relative isolate whitespace-nowrap text-brand-dark">
                 <span aria-hidden className="marker absolute inset-x-0 bottom-[0.08em] -z-10 h-[0.3em] rounded-sm bg-brand/20" />
@@ -115,14 +114,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <div className="hero-in mt-9 flex flex-col gap-3 [animation-delay:280ms] sm:flex-row sm:items-center">
               <Link
                 href="/free-growth-plan/"
-                className="btn-shine halo group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-brand-dark px-7 text-[16px] font-bold text-white transition-colors hover:bg-brand-deeper"
+                className="btn-shine halo group inline-flex h-14 items-center justify-center gap-2 rounded-sm bg-brand-dark px-7 text-[16px] font-bold text-white transition-colors hover:bg-brand-deeper"
               >
                 Get your free growth plan
                 <ArrowRight aria-hidden className="size-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
               <a
                 href={`tel:${site.phones.uk.tel}`}
-                className="btn-shine group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-ink px-7 text-[16px] font-bold text-white"
+                className="group inline-flex h-14 items-center justify-center gap-2 rounded-sm border-2 border-ink bg-white px-7 text-[16px] font-bold text-ink transition-colors hover:bg-ink hover:text-white"
               >
                 <Phone aria-hidden className="size-[18px] transition-transform duration-300 group-hover:-rotate-12" />
                 Call {site.phones.uk.display}
@@ -132,13 +131,15 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
           <div className="hero-in [animation-delay:240ms]">
             <Tilt className="mx-auto max-w-[540px] lg:mr-0">
-              <figure className="float-slow rounded-3xl bg-white p-4 shadow-[0_30px_70px_-25px_rgb(10_10_10/0.3)] ring-1 ring-brand sm:p-5">
+              <div className="brackets relative">
+                <div aria-hidden className="absolute inset-0 translate-x-4 translate-y-4 border-2 border-brand-dark" />
+              <figure className="relative rounded-3xl bg-white p-4 shadow-[0_30px_70px_-25px_rgb(10_10_10/0.3)] ring-1 ring-brand sm:p-5">
                 {visual.frame === "browser" ? (
                   <div className="overflow-hidden rounded-xl ring-1 ring-zinc-200">
                     <div className="flex items-center gap-1.5 border-b border-zinc-200 bg-white px-3 py-2">
-                      <span className="size-2 rounded-full bg-[#ff5f57]" />
-                      <span className="size-2 rounded-full bg-[#febc2e]" />
-                      <span className="size-2 rounded-full bg-[#28c840]" />
+                      <span className="size-2 rounded-sm bg-[#ff5f57]" />
+                      <span className="size-2 rounded-sm bg-[#febc2e]" />
+                      <span className="size-2 rounded-sm bg-[#28c840]" />
                     </div>
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <Image src={visual.src} alt={visual.alt} fill preload loading="eager" sizes="(min-width: 1024px) 520px, 90vw" className="scroll-shot object-cover object-top" />
@@ -151,6 +152,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 )}
                 <figcaption className="mt-3 px-1 text-[13px] text-zinc-500">{visual.caption}</figcaption>
               </figure>
+              </div>
             </Tilt>
           </div>
         </div>
@@ -166,7 +168,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </div>
           <div className="reveal-up self-center [--d:0.12s]">
             <Eyebrow>Who it&apos;s for</Eyebrow>
-            <h2 className="mt-4 text-3xl font-extrabold tracking-[-0.03em] text-ink sm:text-4xl">Is this right for your business?</h2>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-[-0.015em] text-ink sm:text-4xl">Is this right for your business?</h2>
             <p className="mt-4 text-lg leading-relaxed text-zinc-600">{s.forWho}</p>
           </div>
         </InView>
@@ -177,12 +179,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
           <InView className="max-w-2xl">
             <Eyebrow>What we fix</Eyebrow>
-            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-4xl">The problems this solves</h2>
+            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-4xl">The problems this solves</h2>
           </InView>
           <InView as="ul" className="mt-10 grid gap-5 md:grid-cols-3" threshold={0.2}>
             {s.problems.map((p, i) => (
               <li key={p.title} className="reveal-up" style={{ "--d": `${0.1 + i * 0.12}s` } as CSSProperties}>
-                <div className="group h-full rounded-3xl bg-white p-7 ring-1 ring-brand transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgb(4_120_87/0.45)] hover:ring-2">
+                <div className="group h-full rounded-3xl bg-white p-7 ring-1 ring-brand transition duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857] hover:ring-2">
                   <span className="flex size-11 items-center justify-center rounded-xl bg-brand-dark text-[15px] font-bold text-white transition-transform duration-300 group-hover:-rotate-6">
                     0{i + 1}
                   </span>
@@ -197,11 +199,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       {/* 4. What's included: heading pinned beside the longer list */}
       <section className="relative overflow-clip bg-black py-16 text-white sm:py-24">
-        <div aria-hidden className="drift-b pointer-events-none absolute top-[10%] right-[-10%] h-[480px] w-[480px] rounded-full bg-brand/20 blur-[130px]" />
         <div className="relative mx-auto grid max-w-[1200px] gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <InView className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow light>What&apos;s included</Eyebrow>
-            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.03em] [--d:0.08s] sm:text-4xl">
+            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.015em] [--d:0.08s] sm:text-4xl">
               Everything in our {s.name} service
             </h2>
             <p className="reveal-up mt-4 text-lg leading-relaxed text-zinc-400 [--d:0.16s]">
@@ -216,7 +217,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   className="cmp-row flex items-start gap-3 rounded-2xl bg-white/[0.04] p-5 ring-1 ring-white/10 transition-colors hover:bg-white/[0.07]"
                   style={{ "--d": `${0.08 + i * 0.07}s` } as CSSProperties}
                 >
-                  <span className="cmp-check mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-dark text-white">
+                  <span className="cmp-check mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-sm bg-brand-dark text-white">
                     <Check aria-hidden className="size-3.5" strokeWidth={3.5} />
                   </span>
                   <span className="text-[15px] leading-relaxed text-zinc-200">{item}</span>
@@ -238,14 +239,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
           <InView className="mx-auto max-w-2xl text-center">
             <Eyebrow>Our process</Eyebrow>
-            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-4xl">How it works, step by step</h2>
+            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-4xl">How it works, step by step</h2>
           </InView>
           <InView className="relative mt-14" threshold={0.3}>
-            <div aria-hidden className="absolute top-7 right-[12.5%] left-[12.5%] hidden h-[3px] rounded-full bg-zinc-200 lg:block">
-              <div className="timeline-x h-full rounded-full bg-gradient-to-r from-brand-dark to-brand-light" />
+            <div aria-hidden className="absolute top-7 right-[12.5%] left-[12.5%] hidden h-[3px] rounded-sm bg-zinc-200 lg:block">
+              <div className="timeline-x h-full rounded-sm bg-gradient-to-r from-brand-dark to-brand-light" />
             </div>
-            <div aria-hidden className="absolute top-7 bottom-10 left-7 w-[3px] rounded-full bg-zinc-200 lg:hidden">
-              <div className="timeline-y w-full rounded-full bg-gradient-to-b from-brand-dark to-brand-light" />
+            <div aria-hidden className="absolute top-7 bottom-10 left-7 w-[3px] rounded-sm bg-zinc-200 lg:hidden">
+              <div className="timeline-y w-full rounded-sm bg-gradient-to-b from-brand-dark to-brand-light" />
             </div>
             <ol className="relative grid gap-10 lg:grid-cols-4 lg:gap-6">
               {s.process.map((p, i) => (
@@ -260,7 +261,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                     </span>
                   </div>
                   <div className="reveal-up lg:mt-7">
-                    <span className="inline-flex rounded-full bg-brand/10 px-3 py-1 text-[12px] font-bold text-brand-dark">{p.time}</span>
+                    <span className="inline-flex rounded-sm bg-brand/10 px-3 py-1 text-[12px] font-bold text-brand-dark">{p.time}</span>
                     <h3 className="mt-3 text-xl font-extrabold tracking-tight text-ink">{p.title}</h3>
                     <p className="mt-2 text-[15px] leading-relaxed text-zinc-600 lg:mx-auto lg:max-w-[250px]">{p.body}</p>
                   </div>
@@ -277,7 +278,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <InView className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <Eyebrow>Results</Eyebrow>
-              <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-4xl">
+              <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-4xl">
                 {studies.length ? "Campaigns we have run" : "Work we have done"}
               </h2>
               <p className="reveal-up mt-4 text-lg leading-relaxed text-zinc-600 [--d:0.16s]">
@@ -287,7 +288,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <div className="reveal-up [--d:0.2s]">
               <Link
                 href={studies.length ? "/case-studies/" : "/work/"}
-                className="group inline-flex h-12 items-center gap-2 rounded-full border border-zinc-300 bg-white px-6 text-[15px] font-bold text-ink transition-colors hover:border-brand-dark hover:text-brand-dark"
+                className="group inline-flex h-12 items-center gap-2 rounded-sm border-2 border-ink bg-white px-6 text-[15px] font-bold text-ink transition-colors hover:bg-ink hover:text-white"
               >
                 {studies.length ? "All case studies" : "See all work"}
                 <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -301,7 +302,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 const [big, ...rest] = ukHighlights(c);
                 return (
                   <li key={c.slug} className="reveal-up" style={{ "--d": `${0.1 + i * 0.12}s` } as CSSProperties}>
-                    <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-brand transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgb(4_120_87/0.45)] hover:ring-2">
+                    <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-brand transition duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857] hover:ring-2">
                       <div className="bg-white p-4 pb-0">
                         <div className="overflow-hidden rounded-xl ring-1 ring-zinc-200">
                           <Image
@@ -316,8 +317,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                       </div>
                       <div className="flex flex-1 flex-col p-6 sm:p-7">
                         <div className="flex items-center justify-between gap-3">
-                          <span className="inline-flex items-center gap-1.5 rounded-full bg-mist px-2.5 py-1 text-[12px] font-semibold text-zinc-700">
-                            <span className={`size-1.5 rounded-full ${c.platform === "Google Ads" ? "bg-[#fbbc04]" : "bg-[#0866ff]"}`} />
+                          <span className="inline-flex items-center gap-1.5 rounded-sm bg-mist px-2.5 py-1 text-[12px] font-semibold text-zinc-700">
+                            <span className={`size-1.5 rounded-sm ${c.platform === "Google Ads" ? "bg-[#fbbc04]" : "bg-[#0866ff]"}`} />
                             {c.platform}
                           </span>
                           <span className="text-[12px] text-zinc-500">{c.sector}</span>
@@ -367,7 +368,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <InView as="ul" className="mt-6 grid gap-6 md:grid-cols-2" threshold={0.15}>
               {work.map((p, i) => (
                 <li key={p.slug} className="reveal-up" style={{ "--d": `${0.15 + i * 0.12}s` } as CSSProperties}>
-                  <article className="group h-full overflow-hidden rounded-3xl bg-white ring-1 ring-brand transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgb(4_120_87/0.45)]">
+                  <article className="group h-full overflow-hidden rounded-3xl bg-white ring-1 ring-brand transition duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857]">
                     <div className="relative aspect-[16/10] overflow-hidden bg-zinc-100">
                       <Image
                         src={p.desktop}
@@ -405,7 +406,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <section className="bg-white py-16 sm:py-24">
         <InView className="mx-auto grid max-w-[1200px] items-start gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
           <div className="reveal-up relative overflow-hidden rounded-3xl bg-ink p-8 text-white sm:p-10 lg:sticky lg:top-28">
-            <div aria-hidden className="absolute -top-24 -right-24 size-72 rounded-full bg-brand/30 blur-3xl" />
             <p className="relative text-[12px] font-bold tracking-[0.16em] text-brand-light uppercase">Pricing</p>
             <p className="relative mt-3 flex items-baseline gap-2">
               <span className="text-[15px] text-zinc-400">From</span>
@@ -418,7 +418,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </p>
             <Link
               href="/free-growth-plan/"
-              className="btn-shine group relative mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
+              className="btn-shine group relative mt-8 inline-flex h-12 items-center gap-2 rounded-sm bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
             >
               Get a custom offer
               <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -426,11 +426,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </div>
           <div className="reveal-up [--d:0.12s]">
             <Eyebrow>What affects the price</Eyebrow>
-            <h2 className="mt-4 text-3xl font-extrabold tracking-[-0.03em] text-ink sm:text-4xl">What changes the cost</h2>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-[-0.015em] text-ink sm:text-4xl">What changes the cost</h2>
             <ul className="mt-6 grid gap-3">
               {s.priceFactors.map((f) => (
                 <li key={f} className="flex items-start gap-3 rounded-2xl p-4 ring-1 ring-brand">
-                  <span className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-dark text-white">
+                  <span className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-sm bg-brand-dark text-white">
                     <Check aria-hidden className="size-3.5" strokeWidth={3.5} />
                   </span>
                   <span className="text-[16px] text-ink">{f}</span>
@@ -457,7 +457,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <li key={o.slug} className="reveal-up" style={{ "--d": `${0.08 + i * 0.1}s` } as CSSProperties}>
                   <Link
                     href={`/services/${o.slug}/`}
-                    className="group flex h-full items-start gap-4 rounded-2xl p-5 ring-1 ring-brand transition duration-300 hover:-translate-y-1 hover:bg-brand/[0.04] hover:shadow-[0_16px_40px_-20px_rgb(4_120_87/0.5)]"
+                    className="group flex h-full items-start gap-4 rounded-2xl p-5 ring-1 ring-brand transition duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:bg-brand/[0.04] hover:shadow-[5px_5px_0_0_#047857]"
                   >
                     <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white transition-transform duration-300 group-hover:-rotate-6">
                       <OIcon aria-hidden className="size-5" />

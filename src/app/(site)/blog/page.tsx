@@ -37,7 +37,7 @@ function Meta({ post, light }: { post: Post; light?: boolean }) {
 
 function Card({ post }: { post: Post }) {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-brand transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgb(4_120_87/0.45)] hover:ring-2">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-brand transition duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857] hover:ring-2">
       <PostCover post={post} className="aspect-[16/10]" />
       <div className="flex flex-1 flex-col p-6">
         <Meta post={post} />
@@ -80,7 +80,6 @@ export default function BlogPage() {
       <section className="relative overflow-clip bg-white">
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="dot-grid absolute inset-0" />
-          <div className="drift-a absolute top-[-15%] right-[-10%] h-[560px] w-[560px] rounded-full bg-brand/15 blur-[110px]" />
         </div>
         <div className="relative mx-auto max-w-[1200px] px-4 pt-8 pb-12 sm:px-6 sm:pt-10 sm:pb-16">
           <Breadcrumbs
@@ -92,7 +91,7 @@ export default function BlogPage() {
           />
           <div className="mt-8 grid items-end gap-8 lg:grid-cols-[1.3fr_0.7fr]">
             <div>
-              <h1 className="hero-in text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.035em] text-ink [animation-delay:80ms] sm:text-6xl">
+              <h1 className="hero-in text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.02em] text-ink [animation-delay:80ms] sm:text-6xl">
                 Digital marketing,{" "}
                 <span className="relative isolate whitespace-nowrap text-brand-dark">
                   <span aria-hidden className="marker absolute inset-x-0 bottom-[0.08em] -z-10 h-[0.3em] rounded-sm bg-brand/20" />
@@ -110,7 +109,7 @@ export default function BlogPage() {
                 alt={featured.author.name}
                 width={64}
                 height={64}
-                className="size-14 shrink-0 rounded-full object-cover object-top ring-2 ring-brand"
+                className="size-14 shrink-0 rounded-sm object-cover object-top ring-2 ring-brand"
               />
               <p className="text-[14px] leading-snug text-zinc-600">
                 Written by the team that builds the websites and runs the campaigns, led by{" "}
@@ -127,7 +126,7 @@ export default function BlogPage() {
           <article className="hero-in group relative grid overflow-hidden rounded-3xl bg-ink text-white ring-1 ring-brand [animation-delay:300ms] lg:grid-cols-[1.1fr_0.9fr]">
             <PostCover post={featured} className="aspect-[16/10] lg:aspect-auto lg:min-h-[380px]" />
             <div className="flex flex-col justify-center p-7 sm:p-10">
-              <span className="self-start rounded-full bg-brand-dark px-3 py-1 text-[12px] font-bold">Featured guide</span>
+              <span className="self-start rounded-sm bg-brand-dark px-3 py-1 text-[12px] font-bold">Featured guide</span>
               <h2 className="mt-5 text-3xl leading-tight font-extrabold tracking-tight sm:text-4xl">
                 <Link href={`/blog/${featured.slug}/`} className="after:absolute after:inset-0">
                   {featured.title}
@@ -149,7 +148,7 @@ export default function BlogPage() {
       {/* All guides with topic filter */}
       <section className="bg-mist py-16 sm:py-20">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-          <h2 className="text-3xl font-extrabold tracking-[-0.03em] text-ink sm:text-4xl">All guides</h2>
+          <h2 className="text-3xl font-extrabold tracking-[-0.015em] text-ink sm:text-4xl">All guides</h2>
           <div className="mt-8">
             <BlogGrid items={rest.map((p) => ({ category: p.category, node: <Card post={p} /> }))} />
           </div>

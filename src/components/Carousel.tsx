@@ -39,7 +39,7 @@ export function Carousel({ label, children, slideClass }: { label: string; child
   };
 
   const btn =
-    "inline-flex size-12 items-center justify-center rounded-full border border-white/20 text-white transition-all duration-300 hover:border-brand-dark hover:bg-brand-dark disabled:pointer-events-none disabled:opacity-30";
+    "inline-flex size-12 items-center justify-center rounded-sm border border-white/20 text-white transition-all duration-300 hover:border-brand-dark hover:bg-brand-dark disabled:pointer-events-none disabled:opacity-30";
 
   return (
     <div role="region" aria-roledescription="carousel" aria-label={label}>
@@ -55,8 +55,8 @@ export function Carousel({ label, children, slideClass }: { label: string; child
         ))}
       </ul>
       <div className="mt-8 flex items-center gap-4">
-        <div className="h-[3px] flex-1 overflow-hidden rounded-full bg-white/10">
-          <div className="h-full rounded-full bg-brand-light transition-[width] duration-300" style={{ width: `${Math.max(10, progress * 100)}%` }} />
+        <div className="h-[3px] flex-1 overflow-hidden rounded-sm bg-white/10">
+          <div className="h-full rounded-sm bg-brand-light transition-[width] duration-300" style={{ width: `${Math.max(10, progress * 100)}%` }} />
         </div>
         <button type="button" className={btn} onClick={() => move(-1)} disabled={atStart} aria-label="Previous websites">
           <ArrowLeft className="size-5" />

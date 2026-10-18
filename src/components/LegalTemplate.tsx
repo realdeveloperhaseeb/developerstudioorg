@@ -11,7 +11,7 @@ function Block({ block }: { block: LegalBlock }) {
       <ul className="grid gap-2.5">
         {block.list.map((item) => (
           <li key={item} className="flex items-start gap-3 text-[17px] leading-[1.7] text-zinc-700">
-            <span aria-hidden className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-brand-dark" />
+            <span aria-hidden className="mt-[0.7em] size-1.5 shrink-0 rounded-sm bg-brand-dark" />
             {item}
           </li>
         ))}
@@ -59,7 +59,6 @@ export function LegalTemplate({ page }: { page: LegalPage }) {
       <section className="relative overflow-clip bg-white">
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="dot-grid absolute inset-0" />
-          <div className="drift-a absolute top-[-20%] right-[-10%] h-[520px] w-[520px] rounded-full bg-brand/15 blur-[110px]" />
         </div>
         <div className="relative mx-auto grid max-w-[1200px] items-end gap-10 px-4 pt-8 pb-14 sm:px-6 sm:pt-10 lg:grid-cols-[1fr_1fr] lg:pb-16">
           <div>
@@ -70,10 +69,10 @@ export function LegalTemplate({ page }: { page: LegalPage }) {
                 { name: page.title, href: `/${page.slug}/` },
               ]}
             />
-            <h1 className="hero-in mt-8 text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.035em] text-ink [animation-delay:80ms] sm:text-6xl">
+            <h1 className="hero-in mt-8 text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.02em] text-ink [animation-delay:80ms] sm:text-6xl">
               {page.title}
             </h1>
-            <p className="hero-in mt-5 inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-[13px] font-medium text-zinc-600 ring-1 ring-zinc-200 [animation-delay:160ms]">
+            <p className="hero-in mt-5 inline-flex items-center gap-2 rounded-sm bg-white px-3.5 py-1.5 text-[13px] font-medium text-zinc-600 ring-1 ring-zinc-200 [animation-delay:160ms]">
               <FileText aria-hidden className="size-4 text-brand-dark" />
               Last updated <time>{page.updated}</time>
             </p>
@@ -84,7 +83,7 @@ export function LegalTemplate({ page }: { page: LegalPage }) {
             <ul className="mt-4 grid gap-3">
               {page.summary.map((s) => (
                 <li key={s} className="flex items-start gap-3 text-[16px] leading-relaxed text-zinc-200">
-                  <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-dark text-white">
+                  <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-sm bg-brand-dark text-white">
                     <Check aria-hidden className="size-3" strokeWidth={4} />
                   </span>
                   {s}
@@ -128,7 +127,7 @@ export function LegalTemplate({ page }: { page: LegalPage }) {
               <li key={o.slug}>
                 <Link
                   href={`/${o.slug}/`}
-                  className="group flex h-full items-center justify-between gap-4 rounded-2xl bg-white p-5 ring-1 ring-brand transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_-20px_rgb(4_120_87/0.5)]"
+                  className="group flex h-full items-center justify-between gap-4 rounded-2xl bg-white p-5 ring-1 ring-brand transition duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857]"
                 >
                   <span className="font-bold text-ink">{o.title}</span>
                   <ArrowRight aria-hidden className="size-4 shrink-0 text-brand-dark transition-transform duration-300 group-hover:translate-x-1" />

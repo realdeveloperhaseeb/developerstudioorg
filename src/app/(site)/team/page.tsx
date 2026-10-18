@@ -38,7 +38,6 @@ export default function TeamPage() {
       <section className="relative overflow-clip bg-white">
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="dot-grid absolute inset-0" />
-          <div className="drift-a absolute top-[-15%] right-[-10%] h-[560px] w-[560px] rounded-full bg-brand/15 blur-[110px]" />
         </div>
         <div className="relative mx-auto max-w-[1200px] px-4 pt-8 pb-6 sm:px-6 sm:pt-10">
           <Breadcrumbs
@@ -48,7 +47,7 @@ export default function TeamPage() {
               { name: "Team", href: "/team/" },
             ]}
           />
-          <h1 className="hero-in mt-8 max-w-3xl text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.035em] text-ink [animation-delay:80ms] sm:text-6xl">
+          <h1 className="hero-in mt-8 max-w-3xl text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.02em] text-ink [animation-delay:80ms] sm:text-6xl">
             Meet the people behind{" "}
             <span className="relative isolate whitespace-nowrap text-brand-dark">
               <span aria-hidden className="marker absolute inset-x-0 bottom-[0.08em] -z-10 h-[0.3em] rounded-sm bg-brand/20" />

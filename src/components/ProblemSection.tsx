@@ -43,7 +43,7 @@ function SpeedVisual() {
 function SearchVisual() {
   return (
     <div className="flex h-full flex-col justify-center px-6">
-      <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2.5 shadow-sm ring-1 ring-zinc-200">
+      <div className="flex items-center gap-2 rounded-sm bg-white px-4 py-2.5 shadow-sm ring-1 ring-zinc-200">
         <Search aria-hidden className="size-4 shrink-0 text-zinc-400" />
         <span className="anim typing overflow-hidden text-[13px] font-medium whitespace-nowrap text-ink">web design rotherham</span>
         <span className="anim caret h-4 w-px bg-ink" />
@@ -71,18 +71,18 @@ function ContactVisual() {
   return (
     <div className="flex h-full flex-col items-center justify-center gap-2.5 px-6">
       <div className="flex flex-wrap justify-center gap-2">
-        <span className="anim pop [--d:0.1s] inline-flex items-center gap-1.5 rounded-full bg-ink px-3.5 py-2 text-[13px] font-bold text-white">
+        <span className="anim pop [--d:0.1s] inline-flex items-center gap-1.5 rounded-sm bg-ink px-3.5 py-2 text-[13px] font-bold text-white">
           <Phone aria-hidden className="size-3.5" /> Call
         </span>
-        <span className="anim pop [--d:0.3s] inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-3.5 py-2 text-[13px] font-bold text-white">
+        <span className="anim pop [--d:0.3s] inline-flex items-center gap-1.5 rounded-sm bg-[#25D366] px-3.5 py-2 text-[13px] font-bold text-white">
           <WhatsAppIcon className="size-3.5" /> WhatsApp
         </span>
-        <span className="anim pop [--d:0.5s] inline-flex items-center rounded-full bg-brand-dark px-3.5 py-2 text-[13px] font-bold text-white">
+        <span className="anim pop [--d:0.5s] inline-flex items-center rounded-sm bg-brand-dark px-3.5 py-2 text-[13px] font-bold text-white">
           Get a quote
         </span>
       </div>
       <div className="anim notify mt-3 flex w-full max-w-[240px] items-center gap-3 rounded-xl bg-white p-3 shadow-md ring-1 ring-zinc-200">
-        <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand/15 text-brand-dark">
+        <span className="flex size-8 shrink-0 items-center justify-center rounded-sm bg-brand/15 text-brand-dark">
           <Mail aria-hidden className="size-4" />
         </span>
         <span className="text-[12px] leading-tight">
@@ -124,7 +124,7 @@ export function ProblemSection() {
             <span className="h-px w-6 bg-brand-dark" />
             Sound familiar?
           </p>
-          <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-5xl">
+          <h2 className="reveal-up mt-4 text-4xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-5xl">
             Is your website bringing in enquiries?
           </h2>
           <p className="reveal-up mt-5 text-lg leading-relaxed text-zinc-600 [--d:0.16s]">
@@ -135,7 +135,7 @@ export function ProblemSection() {
         <InView as="ul" className="mt-14 grid gap-6 md:grid-cols-3" threshold={0.2}>
           {problems.map((p, i) => (
             <li key={p.pain} className="reveal-up" style={{ "--d": `${0.1 + i * 0.15}s` } as CSSProperties}>
-              <div className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-brand transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgb(4_120_87/0.45)] hover:ring-2">
+              <div className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-brand transition duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857] hover:ring-2">
               <div
                 className="relative h-[210px] overflow-hidden bg-mist"
                 style={{ "--base": `${0.4 + i * 0.15}s` } as CSSProperties}
@@ -168,7 +168,7 @@ export function ProblemSection() {
           <div className="reveal-up [--d:0.1s]">
             <Link
               href="/free-growth-plan/"
-              className="btn-shine group inline-flex h-12 items-center gap-2 rounded-full bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
+              className="btn-shine group inline-flex h-12 items-center gap-2 rounded-sm bg-brand-dark px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-deeper"
             >
               Get your free growth plan
               <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />

@@ -69,21 +69,19 @@ export default function FreeGrowthPlanPage() {
       <section className="relative overflow-clip bg-white">
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="dot-grid absolute inset-0" />
-          <div className="drift-a absolute top-[-15%] right-[-10%] h-[560px] w-[560px] rounded-full bg-brand/15 blur-[110px]" />
-          <div className="drift-b absolute bottom-[-20%] left-[10%] h-[420px] w-[420px] rounded-full bg-brand-light/15 blur-[110px]" />
         </div>
 
         <div className="relative mx-auto grid max-w-[1200px] items-start gap-12 px-4 pt-10 pb-16 sm:px-6 sm:pt-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 lg:pt-20 lg:pb-24">
           <div>
-            <p className="hero-in inline-flex items-center gap-2.5 rounded-full border border-zinc-200 bg-white/80 px-3.5 py-1.5 text-[13px] font-medium text-zinc-600 backdrop-blur">
+            <p className="hero-in inline-flex items-center gap-2.5 rounded-sm border border-zinc-200 bg-white/80 px-3.5 py-1.5 text-[13px] font-medium text-zinc-600 backdrop-blur">
               <span className="relative flex size-2">
-                <span className="ping absolute inline-flex size-full rounded-full bg-brand opacity-70" />
-                <span className="relative inline-flex size-2 rounded-full bg-brand" />
+                <span className="ping absolute inline-flex size-full rounded-sm bg-brand opacity-70" />
+                <span className="relative inline-flex size-2 rounded-sm bg-brand" />
               </span>
               <span className="sm:hidden">Free · No obligation · Fast reply</span>
               <span className="hidden sm:inline">Free · No obligation · {site.replyPromise}</span>
             </p>
-            <h1 className="hero-in mt-6 text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.035em] text-ink [animation-delay:80ms] sm:text-6xl">
+            <h1 className="hero-in mt-6 text-[2.6rem] leading-[1.04] font-extrabold tracking-[-0.02em] text-ink [animation-delay:80ms] sm:text-6xl">
               Get your free website and{" "}
               <span className="relative isolate whitespace-nowrap text-brand-dark">
                 <span aria-hidden className="marker absolute inset-x-0 bottom-[0.08em] -z-10 h-[0.3em] rounded-sm bg-brand/20" />
@@ -97,7 +95,7 @@ export default function FreeGrowthPlanPage() {
 
             <a
               href="#plan-form"
-              className="hero-in mt-6 inline-flex h-12 items-center gap-2 rounded-full bg-brand-dark px-6 text-[15px] font-bold text-white [animation-delay:220ms] lg:hidden"
+              className="hero-in mt-6 inline-flex h-12 items-center gap-2 rounded-sm bg-brand-dark px-6 text-[15px] font-bold text-white [animation-delay:220ms] lg:hidden"
             >
               Get my free plan
               <ArrowDown aria-hidden className="size-4" />
@@ -110,7 +108,7 @@ export default function FreeGrowthPlanPage() {
               {gets.map((g, i) => (
                 <li
                   key={g.title}
-                  className="hero-in group flex items-start gap-4 rounded-2xl bg-white/80 p-4 ring-1 ring-brand backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-20px_rgb(4_120_87/0.5)]"
+                  className="hero-in group flex items-start gap-4 rounded-2xl bg-white/80 p-4 ring-1 ring-brand backdrop-blur transition duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[5px_5px_0_0_#047857]"
                   style={{ animationDelay: `${0.32 + i * 0.1}s` }}
                 >
                   <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white transition-transform duration-300 group-hover:-rotate-6">
@@ -159,7 +157,7 @@ export default function FreeGrowthPlanPage() {
               <span className="h-px w-6 bg-brand-dark" />
               How it works
             </p>
-            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.03em] text-ink [--d:0.08s] sm:text-4xl">
+            <h2 className="reveal-up mt-4 text-3xl font-extrabold tracking-[-0.015em] text-ink [--d:0.08s] sm:text-4xl">
               Three steps to your plan
             </h2>
           </InView>
@@ -183,7 +181,7 @@ export default function FreeGrowthPlanPage() {
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-[900px] px-4 sm:px-6">
           <InView>
-            <h2 className="reveal-up text-3xl font-extrabold tracking-[-0.03em] text-ink sm:text-4xl">Quick questions</h2>
+            <h2 className="reveal-up text-3xl font-extrabold tracking-[-0.015em] text-ink sm:text-4xl">Quick questions</h2>
           </InView>
           <InView as="ul" className="mt-8 grid gap-4 sm:grid-cols-2" threshold={0.15}>
             {faqs.map((f, i) => (
@@ -207,7 +205,7 @@ export default function FreeGrowthPlanPage() {
           <div className="flex flex-wrap gap-3">
             <a
               href={`tel:${site.phones.uk.tel}`}
-              className="btn-shine inline-flex h-12 items-center gap-2 rounded-full bg-black px-6 text-[15px] font-bold text-white"
+              className="btn-shine inline-flex h-12 items-center gap-2 rounded-sm bg-black px-6 text-[15px] font-bold text-white"
             >
               <Phone aria-hidden className="size-4" />
               Call {site.phones.uk.display}
@@ -216,7 +214,7 @@ export default function FreeGrowthPlanPage() {
               href={site.whatsapp}
               target="_blank"
               rel="noopener"
-              className="inline-flex h-12 items-center gap-2 rounded-full border-2 border-white/70 px-6 text-[15px] font-bold text-white transition-colors hover:bg-white hover:text-brand-dark"
+              className="inline-flex h-12 items-center gap-2 rounded-sm border-2 border-white/70 px-6 text-[15px] font-bold text-white transition-colors hover:bg-white hover:text-brand-dark"
             >
               <WhatsAppIcon className="size-[18px]" />
               WhatsApp us

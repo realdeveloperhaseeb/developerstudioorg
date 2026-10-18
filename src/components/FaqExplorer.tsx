@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Search, X } from "lucide-react";
+import { Minus, Plus, Search, X } from "lucide-react";
 import type { Faq } from "@/content/services";
 import { site } from "@/content/site";
 
@@ -34,7 +34,7 @@ export function FaqExplorer({ groups }: { groups: { group: string; items: Faq[] 
               type="button"
               onClick={() => setQuery("")}
               aria-label="Clear search"
-              className="absolute top-1/2 right-3 flex size-8 -translate-y-1/2 items-center justify-center rounded-full bg-mist text-zinc-600 hover:text-ink"
+              className="absolute top-1/2 right-3 flex size-8 -translate-y-1/2 items-center justify-center rounded-sm bg-mist text-zinc-600 hover:text-ink"
             >
               <X className="size-4" />
             </button>
@@ -47,7 +47,7 @@ export function FaqExplorer({ groups }: { groups: { group: string; items: Faq[] 
               type="button"
               aria-pressed={group === g}
               onClick={() => setGroup(g)}
-              className={`shrink-0 rounded-full px-4 py-2 text-[14px] font-bold whitespace-nowrap transition-all duration-300 ${
+              className={`shrink-0 rounded-sm px-4 py-2 text-[14px] font-bold whitespace-nowrap transition-all duration-300 ${
                 group === g ? "bg-brand-dark text-white" : "bg-mist text-zinc-600 hover:text-ink"
               }`}
             >
@@ -92,9 +92,9 @@ export function FaqExplorer({ groups }: { groups: { group: string; items: Faq[] 
                           <span className="flex-1 text-[17px] leading-snug font-bold text-ink">{f.q}</span>
                           <span
                             aria-hidden
-                            className={`flex size-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${isOpen ? "rotate-45 bg-brand-dark text-white" : "bg-mist text-zinc-600"}`}
+                            className={`flex size-8 shrink-0 items-center justify-center rounded-sm transition-all duration-300 ${isOpen ? "bg-brand-dark text-white" : "bg-mist text-zinc-600"}`}
                           >
-                            <Plus className="size-4" strokeWidth={2.5} />
+                            {isOpen ? <Minus className="size-4" strokeWidth={2.5} /> : <Plus className="size-4" strokeWidth={2.5} />}
                           </span>
                         </button>
                       </h3>
